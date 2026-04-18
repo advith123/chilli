@@ -49,21 +49,25 @@ body{
 .nav{
   position:sticky;top:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:12px 40px;
+  padding:14px 40px;
   background:rgba(245,237,225,.82);
   backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(26,15,10,.08);
 }
 .nav__logo{
   display:flex;align-items:center;text-decoration:none;
-  transition:opacity .25s;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .3s;
+  filter:drop-shadow(0 2px 8px rgba(26,15,10,.12));
 }
-.nav__logo:hover{opacity:.82}
+.nav__logo:hover{
+  transform:scale(1.03);
+  filter:drop-shadow(0 4px 14px rgba(199,38,28,.18));
+}
 .nav__logo-img{
-  height:54px;width:auto;display:block;
-  filter:drop-shadow(0 1px 2px rgba(26,15,10,.08));
+  height:70px;width:auto;display:block;
 }
-@media(max-width:520px){.nav__logo-img{height:44px}}
+@media(max-width:520px){.nav__logo-img{height:52px}}
 .nav__links{display:flex;gap:32px}
 .nav__links a{
   color:var(--ink);text-decoration:none;font-size:14px;
@@ -369,14 +373,31 @@ body{
 
 /* ============ FOOTER ============ */
 .footer{
-  background:var(--ink);color:rgba(245,237,225,.7);
+  background:
+    radial-gradient(ellipse 600px 300px at 20% 0%, rgba(199,38,28,.08), transparent),
+    var(--ink);
+  color:rgba(245,237,225,.7);
   padding:70px 40px 30px;
   display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;
 }
 .footer__logo-img{
-  height:110px;width:auto;display:block;margin-bottom:18px;
-  padding:14px 22px;background:var(--cream);border-radius:8px;
-  box-shadow:0 8px 24px -12px rgba(0,0,0,.5);
+  display:block;width:180px;height:auto;margin-bottom:22px;
+  padding:18px 24px;
+  background:linear-gradient(135deg,#faf4e8,#ede1cc);
+  border:1px solid rgba(199,38,28,.15);
+  border-radius:10px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.5) inset,
+    0 18px 40px -18px rgba(0,0,0,.6),
+    0 0 0 6px rgba(245,237,225,.04);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;
+}
+.footer__logo-img:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.5) inset,
+    0 24px 50px -20px rgba(199,38,28,.4),
+    0 0 0 6px rgba(245,237,225,.06);
 }
 .footer h4{
   font-family:var(--font-display);color:var(--cream);font-size:14px;
