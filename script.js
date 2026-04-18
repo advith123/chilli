@@ -134,16 +134,20 @@ function render(filter = "all") {
   filtered.forEach((v, i) => {
     const card = document.createElement("article");
     card.className = "card";
+    card.setAttribute("itemscope", "");
+    card.setAttribute("itemtype", "https://schema.org/Product");
     card.style.setProperty("--heat", v.color);
     card.style.animationDelay = `${i * 60}ms`;
     card.innerHTML = `
+      <meta itemprop="brand" content="Vijaya Enterprises" />
+      <meta itemprop="category" content="Dry Red Chilli" />
       <div class="card__top">
-        <div class="card__icon">${v.icon}</div>
+        <div class="card__icon" aria-hidden="true">${v.icon}</div>
         <span class="card__heat">${v.heatLabel}</span>
       </div>
-      <h3 class="card__name">${v.name}</h3>
-      <div class="card__origin">${v.origin}</div>
-      <p class="card__desc">${v.desc}</p>
+      <h3 class="card__name" itemprop="name">${v.name}</h3>
+      <div class="card__origin" itemprop="countryOfOrigin">${v.origin}</div>
+      <p class="card__desc" itemprop="description">${v.desc}</p>
       <div class="card__meta">
         <div><span>Scoville</span><b>${v.shu}</b></div>
         <div><span>ASTA color</span><b>${v.asta}</b></div>
