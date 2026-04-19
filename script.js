@@ -345,6 +345,153 @@ class Slider {
 /* ================================================================
    3. VARIETIES — rendering + filters + click-to-detail
    ================================================================ */
+
+/* Per-heat background gradients + chilli fill colour.
+   Referenced by the existing CSS via --cardBg1, --cardBg2, --cardChilli. */
+const heatTheme = {
+  mild:    { bg1: '#fff5f5', bg2: '#ffe4e4', fill: '#ef4444', stem: '#1f2937' },
+  medium:  { bg1: '#fff1f1', bg2: '#fecaca', fill: '#dc2626', stem: '#1f2937' },
+  hot:     { bg1: '#fff1f1', bg2: '#fca5a5', fill: '#b91c1c', stem: '#111827' },
+  extreme: { bg1: '#fef2f2', bg2: '#f87171', fill: '#7f1d1d', stem: '#0a0a0a' }
+};
+
+/* Distinct silhouette per variety — each SVG reflects the real chilli's
+   shape: long+slender, round, wrinkled, tiny, thick, etc.
+   All are drawn monochrome using `currentColor` so the CSS can tint them
+   by heat level via `--cardChilli`. */
+const varietyArt = {
+  /* Guntur Sannam — long, slender, slightly curved */
+  'guntur-sannam': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-18 100 100)">
+      <path d="M 30 100 Q 70 88 120 95 Q 165 102 175 115 Q 155 125 110 120 Q 65 115 30 100 Z"/>
+      <path d="M 28 98 Q 20 82 18 70 Q 20 62 28 66 Q 32 78 32 98 Z" fill="#1f2937"/>
+    </g>
+    <ellipse cx="85" cy="108" rx="22" ry="3" fill="#fff" opacity=".3"/>
+  </svg>`,
+
+  /* Byadgi Kaddi — wrinkled texture, darker crimson */
+  'byadgi-kaddi': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-12 100 100)">
+      <path d="M 35 108 Q 80 95 130 100 Q 170 105 178 118 Q 158 128 115 124 Q 70 120 35 108 Z"/>
+      <path d="M 33 106 Q 24 90 22 78 Q 24 70 32 74 Q 36 86 36 106 Z" fill="#1f2937"/>
+      <!-- wrinkle lines -->
+      <path d="M 55 104 Q 75 98 105 100" stroke="#000" stroke-width="1.5" fill="none" opacity=".35"/>
+      <path d="M 60 115 Q 85 108 120 112" stroke="#000" stroke-width="1.2" fill="none" opacity=".3"/>
+      <path d="M 70 108 Q 90 104 130 106" stroke="#000" stroke-width="1" fill="none" opacity=".25"/>
+    </g>
+  </svg>`,
+
+  /* Kashmiri Deghi — medium length, bright, with glossy highlight */
+  'kashmiri-deghi': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-15 100 100)">
+      <path d="M 40 102 Q 85 90 135 96 Q 170 102 176 114 Q 154 124 112 120 Q 70 115 40 102 Z"/>
+      <path d="M 38 100 Q 28 84 26 72 Q 28 64 36 68 Q 40 80 40 100 Z" fill="#1f2937"/>
+      <!-- highlight stripe -->
+      <path d="M 65 96 Q 95 90 135 94" stroke="#fff" stroke-width="3" fill="none" opacity=".4" stroke-linecap="round"/>
+    </g>
+  </svg>`,
+
+  /* Teja S17 — shorter, pointier, very saturated */
+  'teja-s17': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-20 100 100)">
+      <path d="M 50 108 Q 90 98 130 104 Q 165 112 172 124 L 168 128 Q 158 132 125 130 Q 80 126 50 108 Z"/>
+      <path d="M 48 106 Q 38 90 34 78 Q 36 70 44 74 Q 50 86 50 106 Z" fill="#111827"/>
+      <path d="M 75 108 L 120 118" stroke="#fff" stroke-width="1.5" fill="none" opacity=".35"/>
+    </g>
+  </svg>`,
+
+  /* Bhut Jolokia — bumpy, textured, gnarly ghost pepper */
+  'bhut-jolokia': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-10 100 100)">
+      <!-- bumpy outline -->
+      <path d="M 40 110 Q 55 98 70 102 Q 85 94 100 100 Q 118 92 135 100 Q 152 94 165 108 Q 172 120 165 124 Q 150 132 135 128 Q 118 132 100 128 Q 85 134 70 128 Q 55 132 42 120 Z"/>
+      <path d="M 38 108 Q 28 92 26 80 Q 28 72 36 76 Q 40 88 40 108 Z" fill="#0a0a0a"/>
+      <!-- texture dots -->
+      <circle cx="75" cy="112" r="2" fill="#000" opacity=".4"/>
+      <circle cx="98" cy="118" r="2.5" fill="#000" opacity=".4"/>
+      <circle cx="125" cy="114" r="2" fill="#000" opacity=".4"/>
+      <circle cx="148" cy="118" r="1.8" fill="#000" opacity=".4"/>
+    </g>
+  </svg>`,
+
+  /* Reshampatti — thick, stocky, balanced */
+  'reshampatti': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-14 100 100)">
+      <path d="M 42 102 Q 85 85 140 93 Q 172 100 178 118 Q 155 130 115 128 Q 70 122 42 102 Z"/>
+      <path d="M 40 100 Q 30 82 28 68 Q 30 60 38 64 Q 42 76 42 100 Z" fill="#1f2937"/>
+      <ellipse cx="100" cy="110" rx="35" ry="4" fill="#fff" opacity=".28"/>
+    </g>
+  </svg>`,
+
+  /* Ramnad Mundu — ROUND, stubby, cherry-shaped (most distinctive) */
+  'ramnad-mundu': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g>
+      <!-- cluster of round pods -->
+      <ellipse cx="80" cy="120" rx="32" ry="28"/>
+      <ellipse cx="128" cy="118" rx="30" ry="26"/>
+      <ellipse cx="104" cy="90" rx="28" ry="24"/>
+      <!-- stems -->
+      <path d="M 80 94 Q 78 82 74 72 Q 80 74 82 94 Z" fill="#1f2937"/>
+      <path d="M 128 94 Q 126 82 122 72 Q 128 74 130 94 Z" fill="#1f2937"/>
+      <path d="M 104 68 Q 102 56 98 46 Q 104 48 106 68 Z" fill="#1f2937"/>
+      <!-- highlights -->
+      <ellipse cx="72" cy="112" rx="8" ry="4" fill="#fff" opacity=".35"/>
+      <ellipse cx="120" cy="110" rx="7" ry="3" fill="#fff" opacity=".3"/>
+      <ellipse cx="96" cy="82" rx="6" ry="3" fill="#fff" opacity=".3"/>
+    </g>
+  </svg>`,
+
+  /* Sankeshwari — long, crinkled, Kolhapuri */
+  'sankeshwari': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-16 100 100)">
+      <path d="M 30 104 Q 60 92 90 100 Q 120 88 150 100 Q 172 108 178 120 Q 160 128 130 124 Q 100 132 70 122 Q 40 118 30 104 Z"/>
+      <path d="M 28 102 Q 18 86 16 74 Q 18 66 26 70 Q 30 82 30 102 Z" fill="#1f2937"/>
+      <!-- crinkle waves -->
+      <path d="M 50 106 Q 70 100 90 106 Q 110 98 130 104 Q 150 110 170 108" stroke="#000" stroke-width="1" fill="none" opacity=".3"/>
+    </g>
+  </svg>`,
+
+  /* Jwala — very thin, wavy */
+  'jwala': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-22 100 100)">
+      <path d="M 35 108 Q 65 90 95 104 Q 125 94 150 110 Q 170 118 176 125 Q 165 130 148 126 Q 125 116 95 122 Q 65 112 35 108 Z"/>
+      <path d="M 33 106 Q 24 90 22 78 Q 24 70 32 74 Q 36 86 36 106 Z" fill="#1f2937"/>
+    </g>
+  </svg>`,
+
+  /* Ellachipur Sannam — slightly sharper than Guntur */
+  'ellachipur-sannam': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g transform="rotate(-20 100 100)">
+      <path d="M 32 100 Q 75 88 125 94 Q 168 100 178 114 L 175 120 Q 155 128 110 124 Q 65 118 32 100 Z"/>
+      <path d="M 30 98 Q 20 82 18 70 Q 20 62 28 66 Q 32 78 32 98 Z" fill="#111827"/>
+    </g>
+  </svg>`,
+
+  /* Dhani (Bird's Eye) — tiny torpedoes, multiple */
+  'dhani': `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <g>
+      <!-- 5 tiny pointed pods radiating -->
+      <g transform="rotate(-30 100 100)"><path d="M 60 100 Q 90 96 120 100 L 118 105 Q 90 107 60 104 Z"/><path d="M 60 100 L 54 92 L 58 90 Z" fill="#1f2937"/></g>
+      <g transform="rotate(10 100 100)"><path d="M 65 100 Q 95 96 125 100 L 123 105 Q 95 107 65 104 Z"/><path d="M 65 100 L 59 92 L 63 90 Z" fill="#1f2937"/></g>
+      <g transform="rotate(50 100 100)"><path d="M 70 100 Q 100 96 130 100 L 128 105 Q 100 107 70 104 Z"/><path d="M 70 100 L 64 92 L 68 90 Z" fill="#1f2937"/></g>
+      <g transform="rotate(-70 100 100)"><path d="M 70 100 Q 100 96 130 100 L 128 105 Q 100 107 70 104 Z"/><path d="M 70 100 L 64 92 L 68 90 Z" fill="#1f2937"/></g>
+      <g transform="rotate(130 100 100)"><path d="M 70 100 Q 100 96 130 100 L 128 105 Q 100 107 70 104 Z"/><path d="M 70 100 L 64 92 L 68 90 Z" fill="#1f2937"/></g>
+      <circle cx="100" cy="100" r="6" fill="#1f2937"/>
+    </g>
+  </svg>`
+};
+
+function getVarietyArt(slug) {
+  return varietyArt[slug] || slideVisuals['chilli-single'];
+}
+
+function applyHeatTheme(el, heat, prefix = 'card') {
+  const t = heatTheme[heat] || heatTheme.medium;
+  el.style.setProperty(`--${prefix}Bg1`, t.bg1);
+  el.style.setProperty(`--${prefix}Bg2`, t.bg2);
+  el.style.setProperty(`--${prefix}Chilli`, t.fill);
+}
+
 const varieties = [
   { slug: 'guntur-sannam',     name: 'Guntur Sannam S4',     origin: 'Guntur · Andhra Pradesh',       heat: 'hot',     heatLabel: 'Hot',     shu: '35,000–40,000',    asta: '32–38',   tagline: 'India\'s flagship export chilli.', desc: 'Pungent, deep red, long slender pods. The workhorse of curry powders and commercial sauces worldwide.', story: 'Grown on the red-soil plateaus of Guntur district, Sannam S4 is the cornerstone of Andhra Pradesh\'s chilli economy. Farmers transplant seedlings in August, harvest ripe red pods from December through March, and sun-dry them for 14–18 days on bamboo platforms. The result is a chilli with balanced heat (35,000–40,000 SHU), stable red colour, and long shelf life — qualities that make it the preferred choice for global spice manufacturers, from South Korean gochujang makers to British curry-powder blenders. Vijaya Enterprises exports roughly 900 tonnes of Sannam S4 annually, nearly 40% of our total volume.' },
   { slug: 'byadgi-kaddi',      name: 'Byadgi Kaddi',         origin: 'Haveri · Karnataka',             heat: 'mild',    heatLabel: 'Mild',    shu: '8,000–15,000',     asta: '82–160',  tagline: 'Colour over heat.', desc: 'Deep crimson, wrinkled, prized for ASTA colour. The secret behind authentic South Indian sambars.', story: 'Byadgi gets its name from the Karnataka town where this chilli has been cultivated for over 400 years. Its signature wrinkled skin is a side-effect of the unique drying process — farmers pile the chillies in heaps to ferment briefly before drying, which develops the distinctive dark red colour. With ASTA values regularly exceeding 100, Byadgi is the preferred raw material for oleoresin extraction, lipstick pigments, and premium paprika blends. It holds a GI (Geographical Indication) tag protecting its regional identity.' },
@@ -365,18 +512,34 @@ function renderVarieties(filter = 'all') {
   grid.innerHTML = '';
   const list = filter === 'all' ? varieties : varieties.filter(v => v.heat === filter);
 
+  if (!list.length) {
+    grid.innerHTML = `<p class="types-empty">No varieties in this heat range. <button class="btn-link" data-reset-filter>Show all</button></p>`;
+    grid.querySelector('[data-reset-filter]')?.addEventListener('click', () => {
+      $$('.chip').forEach(c => {
+        c.classList.remove('chip--active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      const all = document.querySelector('.chip[data-filter="all"]');
+      if (all) { all.classList.add('chip--active'); all.setAttribute('aria-selected', 'true'); }
+      renderVarieties('all');
+    });
+    return;
+  }
+
   list.forEach((v, i) => {
     const card = document.createElement('a');
     card.href = `#/variety/${v.slug}`;
     card.className = 'type-card';
     card.style.animationDelay = `${i * 50}ms`;
-    card.setAttribute('aria-label', `${v.name} — ${v.tagline}`);
+    card.setAttribute('aria-label', `${v.name}, ${v.heatLabel} heat, from ${v.origin}. ${v.tagline} Click to read the full story.`);
+    applyHeatTheme(card, v.heat, 'card');
+
     const num = (varieties.indexOf(v) + 1).toString().padStart(2, '0');
     card.innerHTML = `
       <div class="type-card__visual" data-heat="${v.heat}">
         <span class="type-card__number">${num}</span>
         <span class="type-card__heat">${v.heatLabel}</span>
-        <div class="type-card__chilli">${slideVisuals['chilli-single']}</div>
+        <div class="type-card__chilli">${getVarietyArt(v.slug)}</div>
       </div>
       <div class="type-card__body">
         <div class="type-card__origin">${v.origin}</div>
@@ -384,7 +547,9 @@ function renderVarieties(filter = 'all') {
         <p class="type-card__desc">${v.desc}</p>
         <div class="type-card__foot">
           <span class="type-card__specs"><b>${v.shu}</b> SHU · <b>${v.asta}</b> ASTA</span>
-          <span class="type-card__cta">Read →</span>
+          <span class="type-card__cta">Read story
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </div>
       </div>
     `;
@@ -470,9 +635,9 @@ Please share pricing, minimum order quantity, current availability, and a sample
           <h1 class="detail__name">${v.name}</h1>
           <p class="detail__tagline">${v.tagline}</p>
         </div>
-        <div class="detail__visual" data-heat="${v.heat}">
+        <div class="detail__visual" id="detailVisual" data-heat="${v.heat}">
           <span class="detail__decor">${(varieties.indexOf(v) + 1).toString().padStart(2, '0')}</span>
-          ${slideVisuals['chilli-single']}
+          ${getVarietyArt(v.slug)}
         </div>
       </section>
 
@@ -517,6 +682,10 @@ Please share pricing, minimum order quantity, current availability, and a sample
     </article>
   `;
 
+  // Apply heat theme to the detail hero visual (uses --dBg1, --dBg2, --dChilli)
+  const detailVisual = $('#detailVisual', detail);
+  if (detailVisual) applyHeatTheme(detailVisual, v.heat, 'd');
+
   // Populate related cards (3 other varieties, starting from the next one)
   const related = $('#relatedGrid', detail);
   const startIdx = (varieties.indexOf(v) + 1) % varieties.length;
@@ -527,11 +696,12 @@ Please share pricing, minimum order quantity, current availability, and a sample
     a.href = `#/variety/${r.slug}`;
     a.className = 'type-card';
     a.style.animationDelay = `${i * 60}ms`;
+    applyHeatTheme(a, r.heat, 'card');
     a.innerHTML = `
       <div class="type-card__visual">
         <span class="type-card__number">${(varieties.indexOf(r) + 1).toString().padStart(2, '0')}</span>
         <span class="type-card__heat">${r.heatLabel}</span>
-        <div class="type-card__chilli">${slideVisuals['chilli-single']}</div>
+        <div class="type-card__chilli">${getVarietyArt(r.slug)}</div>
       </div>
       <div class="type-card__body">
         <div class="type-card__origin">${r.origin}</div>
@@ -547,6 +717,11 @@ Please share pricing, minimum order quantity, current availability, and a sample
   });
 
   window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+
+  // Update document title & meta description so the detail "page" acts like a real route
+  document.title = `${v.name} — ${v.heatLabel} chilli from ${v.origin.split('·')[0].trim()} | Vijaya Enterprises`;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', `${v.name}: ${v.tagline} ${v.desc}`);
 }
 
 function renderHome() {
@@ -557,6 +732,11 @@ function renderHome() {
   detail.classList.remove('view--active');
   detail.setAttribute('aria-hidden', 'true');
   detail.innerHTML = '';
+
+  // Restore home-page title + description
+  document.title = 'Vijaya Enterprises | Premium Indian Dry Red Chilli Exporter — Guntur, Byadgi, Kashmiri';
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', 'Vijaya Enterprises is a Guntur-based exporter of premium Indian dry red chilli varieties — Guntur Sannam, Byadgi Kaddi, Kashmiri Deghi, Teja S17, Bhut Jolokia, and more. FSSAI, APEDA & ISO 22000 certified. Shipping to 42 countries.');
 }
 
 function handleRoute() {
