@@ -739,11 +739,295 @@ function renderHome() {
   if (metaDesc) metaDesc.setAttribute('content', 'Vijaya Enterprises is a Guntur-based exporter of premium Indian dry red chilli varieties — Guntur Sannam, Byadgi Kaddi, Kashmiri Deghi, Teja S17, Bhut Jolokia, and more. FSSAI, APEDA & ISO 22000 certified. Shipping to 42 countries.');
 }
 
+/* ---------- ABOUT US ---------- */
+function renderAbout() {
+  const home = $('#home-view');
+  const detail = $('#detail-view');
+  home.classList.remove('view--active');
+  home.setAttribute('aria-hidden', 'true');
+  detail.classList.add('view--active');
+  detail.setAttribute('aria-hidden', 'false');
+
+  detail.innerHTML = `
+    <article class="page">
+      <a href="#/" class="detail__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to home
+      </a>
+
+      <header class="page__hero">
+        <div class="page__kicker">About us</div>
+        <h1 class="page__title">Three generations. <em>One obsession.</em></h1>
+        <p class="page__lede">Vijaya Enterprises is a family-run dry red chilli exporter based in Guntur, India — the global capital of chilli trade. Since 1987, we've shipped to 42 countries, worked with 1,200+ contract farmers, and stayed small enough to know every container by name.</p>
+      </header>
+
+      <section class="page__story">
+        <div class="page__story-col">
+          <h2>Our story</h2>
+          <p class="page__drop">V. Sanjeeva Reddy started Vijaya Enterprises in 1987 with a single truck and forty acres of contract land in a village outside Guntur. He had watched for years as middlemen bought chillies from farmers at throwaway prices, resold them to exporters at 3× markup, and kept the farmers hungry. He decided to cut the middle out.</p>
+          <p>His model was simple: pay farmers a guaranteed price fixed at sowing time, supply them with certified seed and fertiliser on credit, and buy everything they grew back at harvest. No auctions, no rejections for cosmetic defects, no midnight renegotiations. The first year he broke even. The second year he started getting calls from other villages.</p>
+          <p>Thirty-nine years later, the model hasn't changed. Sanjeeva's son Krishna runs operations; his granddaughter Priya leads exports and lab quality. We still work without commission agents, we still pay farmers at sowing time, and we still sleep in the warehouse during peak drying season because nobody else is going to.</p>
+        </div>
+
+        <aside class="page__story-side">
+          <div class="page__stat">
+            <strong>1987</strong>
+            <span>Founded in Guntur</span>
+          </div>
+          <div class="page__stat">
+            <strong>2,400 T</strong>
+            <span>Annual export volume</span>
+          </div>
+          <div class="page__stat">
+            <strong>1,200+</strong>
+            <span>Contract farmers</span>
+          </div>
+          <div class="page__stat">
+            <strong>42</strong>
+            <span>Countries served</span>
+          </div>
+          <div class="page__stat">
+            <strong>11</strong>
+            <span>Signature varieties</span>
+          </div>
+          <div class="page__stat">
+            <strong>0</strong>
+            <span>Middlemen between farm and ship</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="page__values">
+        <h2>What we believe</h2>
+        <div class="page__values-grid">
+          <div class="page__value">
+            <div class="page__value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Rooted in place</h3>
+            <p>Every chilli we ship comes from named farms with logged provenance. We don't blend origins to hit volume targets. If the label says Guntur Sannam, it's Guntur Sannam.</p>
+          </div>
+          <div class="page__value">
+            <div class="page__value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg>
+            </div>
+            <h3>Farmers first</h3>
+            <p>Our contracts fix price at sowing, not at harvest. That transfers the market risk from the farmer to us. When prices rise, the farmer still wins because we honour the contract and top up on delivery.</p>
+          </div>
+          <div class="page__value">
+            <div class="page__value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6.5L4.5 17A2 2 0 0 0 6.2 20h11.6a2 2 0 0 0 1.7-3L15 9.5V3"/><path d="M8 3h8"/></svg>
+            </div>
+            <h3>Lab every lot</h3>
+            <p>Aflatoxin, Sudan dye, moisture, ASTA colour, Scoville — NABL-accredited test reports accompany every container. No "typical" values, no "batch averages". The actual lot, measured.</p>
+          </div>
+          <div class="page__value">
+            <div class="page__value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Small, on purpose</h3>
+            <p>We could triple volume tomorrow by cutting corners on drying, blending origins, or adding colour. We don't. Staying small is what makes staying honest possible.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page__team">
+        <h2>The people behind the name</h2>
+        <div class="page__team-grid">
+          <div class="page__member">
+            <div class="page__member-avatar">VS</div>
+            <h3>V. Sanjeeva Reddy</h3>
+            <div class="page__member-role">Founder · Chairman</div>
+            <p>Started the company in 1987. Still walks the warehouse every morning at 5:30. Known on the farm circuit as "Anna" (elder brother).</p>
+          </div>
+          <div class="page__member">
+            <div class="page__member-avatar">KR</div>
+            <h3>Krishna Reddy</h3>
+            <div class="page__member-role">Managing Director</div>
+            <p>Runs farm contracts, procurement, and logistics. Knows every one of the 1,200 contracted farmers by their village and harvest history.</p>
+          </div>
+          <div class="page__member">
+            <div class="page__member-avatar">PR</div>
+            <h3>Priya Reddy</h3>
+            <div class="page__member-role">Head of Exports & Quality</div>
+            <p>Oversees the lab, export documentation, and international accounts. Spent two years at an importer in Rotterdam before joining the family business.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page__cta">
+        <h2>Come visit us.</h2>
+        <p>We welcome buyers, food-safety auditors, and the curious. Our warehouse is ten minutes from Guntur railway station — tea, a tour of the drying yards, and the best biryani in the district.</p>
+        <div class="page__cta-actions">
+          <a href="#contact" class="btn-primary">Plan a visit →</a>
+          <a href="#/why-us" class="btn-secondary">Why work with us →</a>
+        </div>
+      </section>
+    </article>
+  `;
+
+  document.title = 'About Vijaya Enterprises — Three generations of Indian chilli exporters';
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', 'Vijaya Enterprises is a family-run dry red chilli exporter in Guntur, India. Founded 1987, three generations, 1,200+ contract farmers, 42 countries served.');
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+/* ---------- WHY US ---------- */
+function renderWhyUs() {
+  const home = $('#home-view');
+  const detail = $('#detail-view');
+  home.classList.remove('view--active');
+  home.setAttribute('aria-hidden', 'true');
+  detail.classList.add('view--active');
+  detail.setAttribute('aria-hidden', 'false');
+
+  const differentiators = [
+    {
+      number: '01',
+      title: 'Zero middlemen',
+      body: 'We buy directly from 1,200+ contracted farms in Andhra Pradesh, Karnataka, Kashmir, and the North-East. No commission agents, no auction-yard reselling, no four-tier supply chain. Your container was grown on farms we can name.',
+      proof: 'Contract list with farm GPS coordinates available under NDA.'
+    },
+    {
+      number: '02',
+      title: 'NABL lab reports per lot',
+      body: 'Every outbound container carries a fresh, lot-specific lab report covering aflatoxin, Sudan dye, moisture, ASTA colour, and Scoville (capsaicin content). Not a batch average. Not "typical values". The actual lot you\'re buying.',
+      proof: 'Sample report provided with every quote.'
+    },
+    {
+      number: '03',
+      title: 'Certified from field to port',
+      body: 'FSSAI (Food Safety and Standards Authority of India), APEDA (Agricultural and Processed Food Products Export Development Authority), ISO 22000, USFDA FCE registered, Spices Board of India member. One of the very few Guntur exporters with the complete stack.',
+      proof: 'All certificates verifiable on the issuing authority websites.'
+    },
+    {
+      number: '04',
+      title: 'No colour enhancers. Ever.',
+      body: 'Many Indian exporters treat faded chillies with Sudan dye, synthetic red colourants, or sulphur fumigation. These are banned in the EU and US — and we don\'t use them. Your chillies are the colour they dried to, under the sun, in Guntur.',
+      proof: 'Sudan dye test results routinely show "not detected" on our reports.'
+    },
+    {
+      number: '05',
+      title: 'Custom packaging & private label',
+      body: 'We pack to your spec: jute sacks, vacuum cartons, poly bags, consumer-ready retail packs with your branding. Minimum order for private label is 5 tonnes. Artwork turnaround is 10 business days.',
+      proof: 'See our private-label portfolio on request.'
+    },
+    {
+      number: '06',
+      title: 'Flexible incoterms',
+      body: 'FOB Chennai / Mundra / Nhava Sheva. CIF to any major port. DDP available to the US, UK, UAE, Singapore, and EU member states. We handle documentation, customs, and insurance so you handle none of it.',
+      proof: 'Current vessel availability shared within 24 hours of enquiry.'
+    },
+    {
+      number: '07',
+      title: 'Farmers paid at sowing',
+      body: 'Market price risk sits with us, not the farmer. We lock in a purchase price at the time of sowing and honour it at harvest — even if the spot market has crashed. When prices rise above contract, we share the upside.',
+      proof: 'Farmer testimonials and payment records available on visit.'
+    },
+    {
+      number: '08',
+      title: 'Three generations of trust',
+      body: 'Founded 1987. Same family, same village, same warehouse, same core values. We have buyers who have worked with us for 25+ years — and new buyers who come through their recommendation.',
+      proof: 'References from long-term clients provided on request.'
+    }
+  ];
+
+  detail.innerHTML = `
+    <article class="page">
+      <a href="#/" class="detail__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to home
+      </a>
+
+      <header class="page__hero">
+        <div class="page__kicker">Why us</div>
+        <h1 class="page__title">Eight reasons buyers <em>come back.</em></h1>
+        <p class="page__lede">We're not the cheapest exporter in India. We're not the biggest. But we've kept buyers on our books for 25+ years, and here's why.</p>
+      </header>
+
+      <section class="page__reasons">
+        ${differentiators.map(d => `
+          <article class="reason">
+            <div class="reason__number">${d.number}</div>
+            <div class="reason__body">
+              <h3 class="reason__title">${d.title}</h3>
+              <p class="reason__text">${d.body}</p>
+              <div class="reason__proof">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                ${d.proof}
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </section>
+
+      <section class="page__compare">
+        <h2>How we compare</h2>
+        <div class="page__compare-table">
+          <div class="page__compare-header">
+            <div></div>
+            <div><strong>Vijaya Enterprises</strong></div>
+            <div>Typical Indian exporter</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Farm-to-port chain</div>
+            <div class="page__compare-yes">Direct contract with farmer</div>
+            <div class="page__compare-no">2–4 middlemen (commission agents, auction yard, consolidator)</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Lab reports</div>
+            <div class="page__compare-yes">Per lot, NABL-accredited</div>
+            <div class="page__compare-no">"Typical values" or batch averages</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Colour enhancement</div>
+            <div class="page__compare-yes">Never. Sun-dried only</div>
+            <div class="page__compare-no">Sulphur / Sudan dye common</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Farmer pricing</div>
+            <div class="page__compare-yes">Fixed at sowing + harvest top-up</div>
+            <div class="page__compare-no">Spot price at delivery</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Private label</div>
+            <div class="page__compare-yes">From 5 MT · 10-day artwork</div>
+            <div class="page__compare-no">Rarely offered</div>
+          </div>
+          <div class="page__compare-row">
+            <div>Incoterms</div>
+            <div class="page__compare-yes">FOB, CIF, DDP</div>
+            <div class="page__compare-no">Typically FOB only</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page__cta">
+        <h2>Ready to start?</h2>
+        <p>Send us a note — variety, destination port, target volume, target month. We come back within a business day with a quote, a sample lab report, and vessel availability.</p>
+        <div class="page__cta-actions">
+          <a href="#contact" class="btn-primary">Request a quote →</a>
+          <a href="https://wa.me/919392314373" class="btn-secondary" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </section>
+    </article>
+  `;
+
+  document.title = 'Why choose Vijaya Enterprises — Direct-from-farm chilli exports';
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', 'Eight reasons global buyers choose Vijaya Enterprises: zero middlemen, NABL lab reports per lot, FSSAI/APEDA/ISO 22000 certified, farmers paid at sowing, no colour enhancers.');
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
 function handleRoute() {
   const hash = location.hash;
-  const m = hash.match(/^#\/variety\/(.+)$/);
-  if (m) {
-    renderDetail(m[1]);
+  const variety = hash.match(/^#\/variety\/(.+)$/);
+  if (variety) {
+    renderDetail(variety[1]);
+  } else if (hash === '#/about') {
+    renderAbout();
+  } else if (hash === '#/why-us') {
+    renderWhyUs();
   } else {
     renderHome();
     // Scroll to anchor if it matches a section id (#varieties, #journey, #contact)
@@ -760,30 +1044,628 @@ function handleRoute() {
 }
 
 /* ================================================================
-   5. JOURNEY TIMELINE — scroll-driven, Day 1 → Day 147
+   5. JOURNEY CINEMA — scroll-driven 9-scene animation
    ================================================================ */
+
+const cinemaPhases = [
+  {
+    day: 1, title: 'Plowing the field',
+    narrative: 'Before dawn, bullocks drag wooden plows through sun-cracked earth. The red soil of Guntur, rich in iron and potassium, is turned over to breathe. Farmers who have worked these fields for three generations read the land by touch — crumbling a fistful to judge moisture, smelling it to judge fertility.',
+    scene: 'plow'
+  },
+  {
+    day: 5, title: 'Seeding the furrows',
+    narrative: 'Hand-selected seeds from last season\'s best pods are placed into shallow furrows, two centimetres deep and thirty apart. We pay farmers a 15% premium to use our certified seed stock — it\'s the only way we can guarantee variety purity right through to export.',
+    scene: 'seed'
+  },
+  {
+    day: 14, title: 'Germination',
+    narrative: 'Beneath the surface, the seed splits. A tap-root pushes down, two pale cotyledons reach up. Within three days of emergence, true leaves form. We measure germination rate as one of our quality KPIs — a strong stand means a strong harvest.',
+    scene: 'germinate'
+  },
+  {
+    day: 28, title: 'Transplanting',
+    narrative: 'Four-week-old seedlings are moved from nursery beds to the main field. Drip irrigation lines follow each row, delivering water and nutrients directly to the root zone. We use half the water of flood irrigation, and the plants thank us with deeper root systems.',
+    scene: 'grow'
+  },
+  {
+    day: 55, title: 'Flowering',
+    narrative: 'Small, star-shaped white flowers appear at every leaf axil. Each flower self-pollinates within forty-eight hours; those not pollinated simply drop. Native bees help the process along — which is why we require that contracted farms leave pollinator strips at field edges.',
+    scene: 'flower'
+  },
+  {
+    day: 80, title: 'Green fruit forms',
+    narrative: 'Chillies emerge — bright, waxy green, still building their capsaicin. They hang like tiny emerald lanterns from every branch. We walk the rows weekly now, removing pods damaged by thrips or sun-scald so the plant\'s energy goes into the survivors.',
+    scene: 'green'
+  },
+  {
+    day: 110, title: 'The red harvest',
+    narrative: 'Green turns to crimson and the harvest begins. Ripe pods are hand-picked — never machine-harvested — because only a human eye can judge the precise shade that signals peak capsaicin and colour. Immature pods stay on the plant; we come back a week later.',
+    scene: 'harvest'
+  },
+  {
+    day: 125, title: 'Sun drying',
+    narrative: 'For fourteen to twenty-one days, chillies rest on raised bamboo platforms under the Andhra sun. Moisture drops from 78% to a stable 10%. No artificial heat, no colour enhancers, no sulphur — just sunlight, air, and patience. This is where cheap exporters cut corners. We don\'t.',
+    scene: 'dry'
+  },
+  {
+    day: 147, title: 'Sealed for the world',
+    narrative: 'Graded, stemmed, lab-tested, and packed into jute sacks or vacuum-sealed cartons per the buyer\'s spec. From our warehouses in Guntur, 20-foot containers travel to Chennai, Mundra, or Nhava Sheva. From seed to sea in 147 days. From our soil to your shelf.',
+    scene: 'ship'
+  }
+];
+
+/* 9 scene SVGs — shared viewBox "0 0 800 500", consistent horizon at y=340.
+   Each scene has a distinct palette + internal animation that plays when active. */
+const cinemaScenes = {
+  /* ── 1. PLOW ───────────────────────────────────────────────── */
+  plow: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyDawn" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff5eb"/><stop offset=".6" stop-color="#fed7aa"/><stop offset="1" stop-color="#fecaca"/>
+      </linearGradient>
+      <linearGradient id="soilPlow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7c2d12"/><stop offset="1" stop-color="#431407"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyDawn)"/>
+    <circle cx="190" cy="280" r="48" fill="#f97316" opacity=".9" class="cinema-sun"/>
+    <circle cx="190" cy="280" r="68" fill="#f97316" opacity=".25"/>
+    <!-- distant hills -->
+    <path d="M 0 340 Q 150 300 300 330 Q 500 310 700 335 L 800 340 L 800 340 L 0 340 Z" fill="#fecaca" opacity=".7"/>
+    <!-- plowed field with diagonal furrows -->
+    <rect x="0" y="340" width="800" height="160" fill="url(#soilPlow)"/>
+    <g stroke="#1c0a05" stroke-width="2" opacity=".4">
+      <path d="M 0 360 L 800 380"/><path d="M 0 380 L 800 405"/>
+      <path d="M 0 405 L 800 435"/><path d="M 0 435 L 800 470"/>
+      <path d="M 0 465 L 800 500"/>
+    </g>
+    <!-- farmer + bullock silhouette -->
+    <g class="cinema-plow-group" fill="#0a0a0a">
+      <!-- bullock 1 -->
+      <ellipse cx="420" cy="395" rx="38" ry="18"/>
+      <path d="M 388 395 L 378 408 L 388 408 Z M 448 395 L 458 408 L 448 408 Z M 380 388 L 380 378 Q 380 372 385 374 L 388 380 Z"/>
+      <!-- bullock 2 -->
+      <ellipse cx="490" cy="395" rx="38" ry="18"/>
+      <path d="M 458 395 L 448 408 L 458 408 Z M 518 395 L 528 408 L 518 408 Z M 450 388 L 450 378 Q 450 372 455 374 L 458 380 Z"/>
+      <!-- plow -->
+      <path d="M 540 400 L 585 435 L 580 445 L 535 410 Z"/>
+      <!-- farmer -->
+      <circle cx="595" cy="380" r="10"/>
+      <path d="M 588 388 L 580 430 L 588 432 L 595 395 L 602 432 L 610 430 L 602 388 Z"/>
+      <line x1="595" y1="398" x2="560" y2="420" stroke="#0a0a0a" stroke-width="3"/>
+    </g>
+    <!-- birds -->
+    <g stroke="#000" fill="none" stroke-width="2" stroke-linecap="round" class="cinema-birds">
+      <path d="M 120 120 q 6 -6 12 0 q 6 -6 12 0"/>
+      <path d="M 180 90 q 5 -5 10 0 q 5 -5 10 0"/>
+      <path d="M 250 140 q 5 -5 10 0 q 5 -5 10 0"/>
+    </g>
+  </svg>`,
+
+  /* ── 2. SEED ───────────────────────────────────────────────── */
+  seed: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyMorn" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#eff6ff"/><stop offset="1" stop-color="#fef9c3"/>
+      </linearGradient>
+      <linearGradient id="soilSeed" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#92400e"/><stop offset="1" stop-color="#451a03"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyMorn)"/>
+    <circle cx="640" cy="110" r="38" fill="#fbbf24" opacity=".95"/>
+    <circle cx="640" cy="110" r="55" fill="#fbbf24" opacity=".2"/>
+    <!-- close-up furrowed ground -->
+    <rect x="0" y="340" width="800" height="160" fill="url(#soilSeed)"/>
+    <!-- furrows (v-shaped trenches) -->
+    <g fill="#1c0a05" opacity=".55">
+      <path d="M 0 360 Q 200 372 400 360 Q 600 350 800 362 L 800 372 Q 600 362 400 370 Q 200 380 0 370 Z"/>
+      <path d="M 0 395 Q 200 408 400 397 Q 600 385 800 398 L 800 408 Q 600 398 400 408 Q 200 418 0 407 Z"/>
+      <path d="M 0 435 Q 200 448 400 438 Q 600 425 800 440 L 800 452 Q 600 440 400 450 Q 200 462 0 450 Z"/>
+    </g>
+    <!-- hand dropping seeds -->
+    <g class="cinema-hand">
+      <path d="M 340 180 L 345 250 Q 350 280 380 285 L 440 285 Q 470 280 470 260 L 465 220 L 445 195 L 410 180 Z" fill="#d4a373" opacity=".95"/>
+      <path d="M 340 180 L 345 250 Q 350 280 380 285 L 440 285 Q 470 280 470 260 L 465 220 L 445 195 L 410 180 Z" fill="none" stroke="#78350f" stroke-width="1.5" opacity=".4"/>
+    </g>
+    <!-- falling seeds -->
+    <g class="cinema-seeds" fill="#78350f">
+      <ellipse cx="395" cy="310" rx="4" ry="3"/>
+      <ellipse cx="420" cy="330" rx="4" ry="3"/>
+      <ellipse cx="380" cy="355" rx="4" ry="3"/>
+    </g>
+    <!-- seeds already landed in furrows -->
+    <g fill="#fbbf24">
+      <ellipse cx="140" cy="400" rx="4" ry="3"/>
+      <ellipse cx="210" cy="405" rx="4" ry="3"/>
+      <ellipse cx="290" cy="398" rx="4" ry="3"/>
+      <ellipse cx="550" cy="445" rx="4" ry="3"/>
+      <ellipse cx="640" cy="440" rx="4" ry="3"/>
+      <ellipse cx="720" cy="450" rx="4" ry="3"/>
+    </g>
+  </svg>`,
+
+  /* ── 3. GERMINATE (cross-section view) ─────────────────────── */
+  germinate: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyCool" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#fef3c7"/>
+      </linearGradient>
+      <linearGradient id="earthCross" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7c2d12"/><stop offset=".5" stop-color="#451a03"/><stop offset="1" stop-color="#1c0a05"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="220" fill="url(#skyCool)"/>
+    <circle cx="680" cy="90" r="32" fill="#fde047" opacity=".9"/>
+    <!-- soil cross-section (much taller to show roots) -->
+    <rect x="0" y="220" width="800" height="280" fill="url(#earthCross)"/>
+    <!-- horizon line at y=220 -->
+    <line x1="0" y1="220" x2="800" y2="220" stroke="#92400e" stroke-width="2" opacity=".5"/>
+    <!-- soil texture dots -->
+    <g fill="#000" opacity=".25">
+      <circle cx="100" cy="260" r="2"/><circle cx="200" cy="300" r="2"/><circle cx="320" cy="280" r="2"/>
+      <circle cx="500" cy="320" r="2"/><circle cx="620" cy="290" r="2"/><circle cx="720" cy="340" r="2"/>
+      <circle cx="150" cy="380" r="2"/><circle cx="380" cy="410" r="2"/><circle cx="600" cy="430" r="2"/>
+    </g>
+    <!-- Sprout 1 -->
+    <g class="cinema-sprout-a">
+      <!-- underground root -->
+      <path d="M 250 220 Q 248 270 255 320 Q 260 370 250 420" stroke="#f5f5f4" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+      <path d="M 253 290 L 235 310" stroke="#f5f5f4" stroke-width="1.5" fill="none" opacity=".6"/>
+      <path d="M 256 340 L 278 365" stroke="#f5f5f4" stroke-width="1.5" fill="none" opacity=".6"/>
+      <!-- above-ground sprout -->
+      <line x1="250" y1="220" x2="250" y2="170" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 250 180 Q 232 175 228 168 Q 245 165 252 178 Z" fill="#84cc16"/>
+      <path d="M 250 180 Q 268 175 272 168 Q 255 165 248 178 Z" fill="#84cc16"/>
+    </g>
+    <!-- Sprout 2 - slightly behind -->
+    <g class="cinema-sprout-b" opacity=".85">
+      <path d="M 480 220 Q 478 265 485 310 Q 490 355 482 400" stroke="#f5f5f4" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+      <path d="M 484 285 L 505 305" stroke="#f5f5f4" stroke-width="1.5" fill="none" opacity=".5"/>
+      <line x1="480" y1="220" x2="480" y2="185" stroke="#65a30d" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 480 192 Q 465 188 462 182 Q 478 180 482 190 Z" fill="#84cc16"/>
+      <path d="M 480 192 Q 495 188 498 182 Q 482 180 478 190 Z" fill="#84cc16"/>
+    </g>
+    <!-- Tiny sprout 3 just emerging -->
+    <g class="cinema-sprout-c" opacity=".8">
+      <path d="M 620 220 Q 618 255 625 295" stroke="#f5f5f4" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+      <line x1="620" y1="220" x2="620" y2="205" stroke="#65a30d" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="620" cy="207" r="3" fill="#84cc16"/>
+    </g>
+  </svg>`,
+
+  /* ── 4. GROW ───────────────────────────────────────────────── */
+  grow: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#bae6fd"/><stop offset="1" stop-color="#fef9c3"/>
+      </linearGradient>
+      <linearGradient id="soilGrow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#92400e"/><stop offset="1" stop-color="#451a03"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyDay)"/>
+    <circle cx="680" cy="85" r="42" fill="#fde047" opacity=".95"/>
+    <!-- far hills -->
+    <path d="M 0 340 Q 200 305 400 325 Q 600 310 800 330 L 800 340 L 0 340 Z" fill="#86efac" opacity=".5"/>
+    <rect x="0" y="340" width="800" height="160" fill="url(#soilGrow)"/>
+    <!-- drip irrigation line -->
+    <line x1="0" y1="345" x2="800" y2="345" stroke="#1f2937" stroke-width="2" opacity=".6"/>
+    <g fill="#1f2937" opacity=".6">
+      <circle cx="150" cy="345" r="2"/><circle cx="300" cy="345" r="2"/>
+      <circle cx="450" cy="345" r="2"/><circle cx="600" cy="345" r="2"/>
+    </g>
+    <!-- row of young plants - plant template -->
+    ${[120, 260, 400, 540, 680].map((x, i) => {
+      const scale = 0.85 + (i % 2) * 0.15;
+      return `<g transform="translate(${x} 340) scale(${scale})" class="cinema-plant cinema-plant--${i}">
+        <line x1="0" y1="0" x2="0" y2="-90" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+        <!-- leaves -->
+        <ellipse cx="-18" cy="-30" rx="14" ry="8" fill="#22c55e" transform="rotate(-30 -18 -30)"/>
+        <ellipse cx="18" cy="-45" rx="14" ry="8" fill="#16a34a" transform="rotate(30 18 -45)"/>
+        <ellipse cx="-20" cy="-60" rx="16" ry="9" fill="#22c55e" transform="rotate(-40 -20 -60)"/>
+        <ellipse cx="20" cy="-75" rx="16" ry="9" fill="#16a34a" transform="rotate(40 20 -75)"/>
+        <ellipse cx="0" cy="-92" rx="12" ry="7" fill="#4ade80"/>
+      </g>`;
+    }).join('')}
+    <!-- butterfly -->
+    <g transform="translate(500 180)" class="cinema-butterfly">
+      <ellipse cx="-6" cy="-3" rx="8" ry="5" fill="#dc2626" opacity=".85" transform="rotate(-20)"/>
+      <ellipse cx="6" cy="-3" rx="8" ry="5" fill="#dc2626" opacity=".85" transform="rotate(20)"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#0a0a0a" stroke-width="1.5"/>
+    </g>
+  </svg>`,
+
+  /* ── 5. FLOWER ─────────────────────────────────────────────── */
+  flower: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyFlower" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#fef9c3"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyFlower)"/>
+    <circle cx="700" cy="90" r="45" fill="#fde047" opacity=".95"/>
+    <!-- rays around sun -->
+    <g stroke="#fde047" stroke-width="2" opacity=".6" class="cinema-rays">
+      <line x1="700" y1="30" x2="700" y2="45"/>
+      <line x1="755" y1="90" x2="770" y2="90"/>
+      <line x1="745" y1="55" x2="756" y2="44"/>
+      <line x1="745" y1="125" x2="756" y2="136"/>
+    </g>
+    <rect x="0" y="340" width="800" height="160" fill="#451a03"/>
+    <!-- mature plant -->
+    <g transform="translate(400 340)" class="cinema-bush">
+      <!-- main stem -->
+      <path d="M 0 0 L 0 -180" stroke="#14532d" stroke-width="6" stroke-linecap="round"/>
+      <!-- branches -->
+      <path d="M 0 -60 L -40 -80 L -60 -70" stroke="#14532d" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -100 L 45 -120 L 70 -115" stroke="#14532d" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -140 L -40 -160 L -65 -165" stroke="#14532d" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- leaves -->
+      <ellipse cx="-50" cy="-72" rx="18" ry="10" fill="#16a34a" transform="rotate(-25 -50 -72)"/>
+      <ellipse cx="55" cy="-118" rx="20" ry="11" fill="#16a34a" transform="rotate(20 55 -118)"/>
+      <ellipse cx="-55" cy="-160" rx="18" ry="10" fill="#16a34a" transform="rotate(-30 -55 -160)"/>
+      <ellipse cx="-25" cy="-130" rx="16" ry="9" fill="#22c55e" transform="rotate(-15 -25 -130)"/>
+      <ellipse cx="30" cy="-80" rx="16" ry="9" fill="#22c55e" transform="rotate(10 30 -80)"/>
+      <ellipse cx="0" cy="-180" rx="14" ry="8" fill="#4ade80"/>
+      <!-- white flowers with yellow centres -->
+      <g class="cinema-flower cinema-flower--1" transform="translate(-58 -68)">
+        <g class="cinema-petal-spin">
+          <circle cx="0" cy="-5" r="5" fill="#fff"/>
+          <circle cx="5" cy="0" r="5" fill="#fff"/>
+          <circle cx="0" cy="5" r="5" fill="#fff"/>
+          <circle cx="-5" cy="0" r="5" fill="#fff"/>
+          <circle cx="3.5" cy="-3.5" r="5" fill="#fff"/>
+          <circle cx="-3.5" cy="3.5" r="5" fill="#fff"/>
+        </g>
+        <circle cx="0" cy="0" r="3" fill="#fde047"/>
+      </g>
+      <g class="cinema-flower cinema-flower--2" transform="translate(62 -112)">
+        <g class="cinema-petal-spin">
+          <circle cx="0" cy="-5" r="5" fill="#fff"/>
+          <circle cx="5" cy="0" r="5" fill="#fff"/>
+          <circle cx="0" cy="5" r="5" fill="#fff"/>
+          <circle cx="-5" cy="0" r="5" fill="#fff"/>
+          <circle cx="3.5" cy="-3.5" r="5" fill="#fff"/>
+          <circle cx="-3.5" cy="3.5" r="5" fill="#fff"/>
+        </g>
+        <circle cx="0" cy="0" r="3" fill="#fde047"/>
+      </g>
+      <g class="cinema-flower cinema-flower--3" transform="translate(-62 -155)">
+        <g class="cinema-petal-spin">
+          <circle cx="0" cy="-5" r="5" fill="#fff"/>
+          <circle cx="5" cy="0" r="5" fill="#fff"/>
+          <circle cx="0" cy="5" r="5" fill="#fff"/>
+          <circle cx="-5" cy="0" r="5" fill="#fff"/>
+          <circle cx="3.5" cy="-3.5" r="5" fill="#fff"/>
+          <circle cx="-3.5" cy="3.5" r="5" fill="#fff"/>
+        </g>
+        <circle cx="0" cy="0" r="3" fill="#fde047"/>
+      </g>
+    </g>
+    <!-- bee -->
+    <g transform="translate(320 170)" class="cinema-bee">
+      <ellipse cx="0" cy="0" rx="6" ry="4" fill="#fbbf24"/>
+      <path d="M -3 -3 L -3 3 M 0 -4 L 0 4 M 3 -3 L 3 3" stroke="#0a0a0a" stroke-width="1.2"/>
+      <ellipse cx="-4" cy="-3" rx="5" ry="2" fill="#fff" opacity=".7"/>
+      <ellipse cx="4" cy="-3" rx="5" ry="2" fill="#fff" opacity=".7"/>
+    </g>
+  </svg>`,
+
+  /* ── 6. GREEN ──────────────────────────────────────────────── */
+  green: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyGreen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#bae6fd"/><stop offset="1" stop-color="#ecfccb"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyGreen)"/>
+    <circle cx="680" cy="95" r="42" fill="#fde047" opacity=".9"/>
+    <rect x="0" y="340" width="800" height="160" fill="#451a03"/>
+    <!-- plant full of green chillies -->
+    <g transform="translate(400 340)">
+      <path d="M 0 0 L 0 -200" stroke="#14532d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M 0 -60 L -55 -85 L -80 -80" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -110 L 60 -130 L 85 -128" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -155 L -55 -175 L -80 -180" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- leaves -->
+      <ellipse cx="-70" cy="-78" rx="20" ry="11" fill="#16a34a" transform="rotate(-25 -70 -78)"/>
+      <ellipse cx="75" cy="-128" rx="22" ry="12" fill="#16a34a" transform="rotate(20 75 -128)"/>
+      <ellipse cx="-70" cy="-178" rx="20" ry="11" fill="#16a34a" transform="rotate(-30 -70 -178)"/>
+      <ellipse cx="-30" cy="-140" rx="18" ry="10" fill="#22c55e" transform="rotate(-15 -30 -140)"/>
+      <ellipse cx="35" cy="-90" rx="18" ry="10" fill="#22c55e" transform="rotate(10 35 -90)"/>
+      <ellipse cx="0" cy="-200" rx="15" ry="9" fill="#4ade80"/>
+      <!-- green chillies hanging -->
+      <g class="cinema-chilli-sway" transform="translate(-78 -72)"><ellipse cx="0" cy="15" rx="4" ry="16" fill="#22c55e"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g class="cinema-chilli-sway" transform="translate(-50 -88)"><ellipse cx="0" cy="18" rx="4" ry="18" fill="#16a34a"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g class="cinema-chilli-sway" transform="translate(85 -122)"><ellipse cx="0" cy="16" rx="4" ry="17" fill="#22c55e"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g class="cinema-chilli-sway" transform="translate(60 -140)"><ellipse cx="0" cy="15" rx="4" ry="16" fill="#4ade80"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g class="cinema-chilli-sway" transform="translate(-80 -172)"><ellipse cx="0" cy="17" rx="4" ry="17" fill="#22c55e"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g class="cinema-chilli-sway" transform="translate(-45 -165)"><ellipse cx="0" cy="14" rx="4" ry="15" fill="#16a34a"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+    </g>
+  </svg>`,
+
+  /* ── 7. HARVEST ────────────────────────────────────────────── */
+  harvest: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyHarvest" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fef3c7"/><stop offset="1" stop-color="#fed7aa"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyHarvest)"/>
+    <circle cx="680" cy="120" r="40" fill="#f97316" opacity=".95"/>
+    <rect x="0" y="340" width="800" height="160" fill="#451a03"/>
+    <!-- plant with RED chillies -->
+    <g transform="translate(380 340)">
+      <path d="M 0 0 L 0 -200" stroke="#14532d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M 0 -60 L -55 -85 L -80 -80" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -110 L 60 -130 L 85 -128" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M 0 -155 L -55 -175 L -80 -180" stroke="#14532d" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-70" cy="-78" rx="20" ry="11" fill="#16a34a" transform="rotate(-25 -70 -78)"/>
+      <ellipse cx="75" cy="-128" rx="22" ry="12" fill="#16a34a" transform="rotate(20 75 -128)"/>
+      <ellipse cx="-70" cy="-178" rx="20" ry="11" fill="#16a34a" transform="rotate(-30 -70 -178)"/>
+      <ellipse cx="-30" cy="-140" rx="18" ry="10" fill="#22c55e" transform="rotate(-15 -30 -140)"/>
+      <ellipse cx="35" cy="-90" rx="18" ry="10" fill="#22c55e" transform="rotate(10 35 -90)"/>
+      <!-- RED chillies -->
+      <g transform="translate(-78 -72)"><ellipse cx="0" cy="15" rx="4" ry="16" fill="#dc2626"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g transform="translate(-50 -88)"><ellipse cx="0" cy="18" rx="4" ry="18" fill="#b91c1c"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g transform="translate(85 -122)"><ellipse cx="0" cy="16" rx="4" ry="17" fill="#dc2626"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g transform="translate(60 -140)"><ellipse cx="0" cy="15" rx="4" ry="16" fill="#991b1b"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+      <g transform="translate(-80 -172)"><ellipse cx="0" cy="17" rx="4" ry="17" fill="#dc2626"/><circle cx="0" cy="0" r="2" fill="#14532d"/></g>
+    </g>
+    <!-- hand reaching in -->
+    <g class="cinema-picker" transform="translate(530 200)">
+      <!-- wrist + forearm coming from right -->
+      <path d="M 300 100 L 120 80 Q 80 75 70 95 Q 65 115 90 120 L 280 140 Z" fill="#d4a373"/>
+      <!-- hand -->
+      <path d="M 70 95 Q 45 85 35 100 Q 30 115 50 120 Q 35 125 38 140 Q 50 150 70 140 Q 80 150 95 140 Q 105 130 95 115 Q 85 100 70 95 Z" fill="#c69167"/>
+      <!-- fingers gripping a chilli -->
+      <ellipse cx="45" cy="128" rx="3" ry="11" fill="#dc2626"/>
+    </g>
+    <!-- basket at base -->
+    <g transform="translate(590 355)" class="cinema-basket">
+      <path d="M -35 0 L 35 0 L 28 35 L -28 35 Z" fill="#92400e"/>
+      <line x1="-30" y1="10" x2="30" y2="10" stroke="#451a03" stroke-width="1.5" opacity=".6"/>
+      <line x1="-32" y1="20" x2="32" y2="20" stroke="#451a03" stroke-width="1.5" opacity=".6"/>
+      <!-- chillies inside -->
+      <ellipse cx="-12" cy="-4" rx="12" ry="4" fill="#dc2626"/>
+      <ellipse cx="12" cy="-6" rx="11" ry="4" fill="#b91c1c"/>
+      <ellipse cx="0" cy="-10" rx="13" ry="4" fill="#dc2626"/>
+      <ellipse cx="-15" cy="-12" rx="9" ry="3" fill="#991b1b"/>
+    </g>
+  </svg>`,
+
+  /* ── 8. DRY ────────────────────────────────────────────────── */
+  dry: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyDry" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fef3c7"/><stop offset="1" stop-color="#fed7aa"/>
+      </linearGradient>
+      <radialGradient id="sunGlow" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="800" height="340" fill="url(#skyDry)"/>
+    <!-- intense overhead sun -->
+    <circle cx="400" cy="100" r="95" fill="url(#sunGlow)" opacity=".6" class="cinema-sun-pulse"/>
+    <circle cx="400" cy="100" r="50" fill="#fbbf24"/>
+    <g stroke="#fbbf24" stroke-width="3" stroke-linecap="round" opacity=".7" class="cinema-rays-strong">
+      <line x1="400" y1="20" x2="400" y2="40"/>
+      <line x1="400" y1="160" x2="400" y2="180"/>
+      <line x1="320" y1="100" x2="340" y2="100"/>
+      <line x1="460" y1="100" x2="480" y2="100"/>
+      <line x1="345" y1="45" x2="358" y2="58"/>
+      <line x1="455" y1="45" x2="442" y2="58"/>
+      <line x1="345" y1="155" x2="358" y2="142"/>
+      <line x1="455" y1="155" x2="442" y2="142"/>
+    </g>
+    <!-- heat shimmer lines (animated in CSS) -->
+    <g class="cinema-shimmer" stroke="#f97316" stroke-width="1.5" fill="none" opacity=".4">
+      <path d="M 100 220 q 10 -6 20 0 q 10 6 20 0 q 10 -6 20 0"/>
+      <path d="M 300 235 q 10 -6 20 0 q 10 6 20 0 q 10 -6 20 0"/>
+      <path d="M 520 225 q 10 -6 20 0 q 10 6 20 0 q 10 -6 20 0"/>
+      <path d="M 650 230 q 10 -6 20 0 q 10 6 20 0 q 10 -6 20 0"/>
+    </g>
+    <rect x="0" y="340" width="800" height="160" fill="#78350f"/>
+    <!-- bamboo drying platforms with chillies spread -->
+    <g transform="translate(80 360)">
+      <rect x="0" y="20" width="280" height="8" fill="#92400e"/>
+      <rect x="0" y="28" width="6" height="60" fill="#92400e"/>
+      <rect x="274" y="28" width="6" height="60" fill="#92400e"/>
+      <!-- chillies scattered -->
+      ${[10, 45, 80, 115, 150, 185, 220, 250].map((x, i) =>
+        `<ellipse cx="${x + (i%2?4:-3)}" cy="${14 + (i%3?-2:3)}" rx="18" ry="5" fill="${['#dc2626','#b91c1c','#dc2626','#991b1b','#dc2626','#b91c1c','#dc2626','#991b1b'][i]}" transform="rotate(${(i%2?-10:12) - i*2} ${x} 14)"/>`
+      ).join('')}
+      ${[25, 60, 95, 130, 165, 200, 235].map((x, i) =>
+        `<ellipse cx="${x}" cy="${6 + (i%2?-1:2)}" rx="17" ry="5" fill="${['#b91c1c','#dc2626','#991b1b','#dc2626','#b91c1c','#dc2626','#991b1b'][i]}" transform="rotate(${(i%2?15:-8) - i*3} ${x} 6)"/>`
+      ).join('')}
+    </g>
+    <g transform="translate(440 360)">
+      <rect x="0" y="20" width="280" height="8" fill="#92400e"/>
+      <rect x="0" y="28" width="6" height="60" fill="#92400e"/>
+      <rect x="274" y="28" width="6" height="60" fill="#92400e"/>
+      ${[10, 45, 80, 115, 150, 185, 220, 250].map((x, i) =>
+        `<ellipse cx="${x}" cy="${14 + (i%2?2:-2)}" rx="18" ry="5" fill="${['#dc2626','#b91c1c','#dc2626','#991b1b','#dc2626','#b91c1c','#dc2626','#991b1b'][i]}" transform="rotate(${(i%2?8:-14) + i*2} ${x} 14)"/>`
+      ).join('')}
+      ${[25, 60, 95, 130, 165, 200, 235].map((x, i) =>
+        `<ellipse cx="${x}" cy="${6 + (i%2?2:-1)}" rx="17" ry="5" fill="${['#991b1b','#dc2626','#b91c1c','#dc2626','#991b1b','#dc2626','#b91c1c'][i]}" transform="rotate(${(i%2?-12:6) - i*3} ${x} 6)"/>`
+      ).join('')}
+    </g>
+  </svg>`,
+
+  /* ── 9. SHIP ───────────────────────────────────────────────── */
+  ship: `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skySunset" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fef3c7"/><stop offset=".5" stop-color="#fecaca"/><stop offset="1" stop-color="#fca5a5"/>
+      </linearGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7dd3fc"/><stop offset="1" stop-color="#0369a1"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="320" fill="url(#skySunset)"/>
+    <circle cx="170" cy="180" r="55" fill="#f97316" opacity=".85"/>
+    <circle cx="170" cy="180" r="85" fill="#f97316" opacity=".2"/>
+    <!-- sea -->
+    <rect x="0" y="320" width="800" height="180" fill="url(#sea)"/>
+    <!-- wave lines -->
+    <g stroke="#fff" stroke-width="1.5" fill="none" opacity=".5" class="cinema-waves">
+      <path d="M 0 360 q 20 -4 40 0 q 20 4 40 0 q 20 -4 40 0 q 20 4 40 0 q 20 -4 40 0 q 20 4 40 0 q 20 -4 40 0 q 20 4 40 0 q 20 -4 40 0 q 20 4 40 0"/>
+      <path d="M 0 400 q 25 -4 50 0 q 25 4 50 0 q 25 -4 50 0 q 25 4 50 0 q 25 -4 50 0 q 25 4 50 0 q 25 -4 50 0 q 25 4 50 0"/>
+      <path d="M 0 445 q 30 -4 60 0 q 30 4 60 0 q 30 -4 60 0 q 30 4 60 0 q 30 -4 60 0 q 30 4 60 0 q 30 -4 60 0"/>
+    </g>
+    <!-- cargo ship -->
+    <g transform="translate(450 280)" class="cinema-ship">
+      <!-- hull -->
+      <path d="M -170 60 L -140 100 L 140 100 L 170 60 L 150 40 L -150 40 Z" fill="#dc2626"/>
+      <path d="M -170 60 L 170 60" stroke="#fff" stroke-width="2" opacity=".5"/>
+      <!-- deck / superstructure -->
+      <rect x="80" y="-10" width="60" height="50" fill="#fff"/>
+      <rect x="90" y="-30" width="40" height="20" fill="#fff"/>
+      <rect x="100" y="-55" width="20" height="25" fill="#fff"/>
+      <rect x="105" y="-75" width="10" height="20" fill="#dc2626"/>
+      <!-- windows -->
+      <g fill="#1e40af">
+        <rect x="85" y="-5" width="8" height="6"/>
+        <rect x="95" y="-5" width="8" height="6"/>
+        <rect x="105" y="-5" width="8" height="6"/>
+        <rect x="115" y="-5" width="8" height="6"/>
+        <rect x="125" y="-5" width="8" height="6"/>
+        <rect x="95" y="-25" width="8" height="6"/>
+        <rect x="115" y="-25" width="8" height="6"/>
+      </g>
+      <!-- shipping containers stacked -->
+      ${[0,1,2,3,4,5,6].map(i => `<rect x="${-155 + i*35}" y="0" width="32" height="35" fill="${['#1e40af','#dc2626','#0f172a','#dc2626','#1e40af','#ca8a04','#dc2626'][i]}" stroke="#fff" stroke-width="1"/>`).join('')}
+      ${[0,1,2,3,4,5,6].map(i => `<rect x="${-155 + i*35}" y="-35" width="32" height="35" fill="${['#dc2626','#0f172a','#dc2626','#1e40af','#ca8a04','#dc2626','#0f172a'][i]}" stroke="#fff" stroke-width="1"/>`).join('')}
+    </g>
+    <!-- flock of birds -->
+    <g stroke="#0a0a0a" fill="none" stroke-width="2" stroke-linecap="round" opacity=".7" class="cinema-birds">
+      <path d="M 300 100 q 6 -6 12 0 q 6 -6 12 0" transform="translate(0 0)"/>
+      <path d="M 350 130 q 5 -5 10 0 q 5 -5 10 0"/>
+      <path d="M 280 140 q 5 -5 10 0 q 5 -5 10 0"/>
+    </g>
+  </svg>`
+};
+
+function renderCinema() {
+  const stage = $('#cinemaStage');
+  const phases = $('#cinemaPhases');
+  const chapters = $('#cinemaChapters');
+  if (!stage || !phases || !chapters) return;
+
+  stage.innerHTML = cinemaPhases.map((p, i) => `
+    <div class="cinema__scene ${i === 0 ? 'is-active' : ''}" data-index="${i}" aria-hidden="true">
+      ${cinemaScenes[p.scene]}
+    </div>
+  `).join('');
+
+  phases.innerHTML = cinemaPhases.map((p, i) => `
+    <article class="cinema__phase ${i === 0 ? 'is-active' : ''}" data-index="${i}">
+      <div class="cinema__phase-day">Day ${p.day}</div>
+      <h3 class="cinema__phase-title">${p.title}</h3>
+      <p class="cinema__phase-body">${p.narrative}</p>
+    </article>
+  `).join('');
+
+  chapters.innerHTML = cinemaPhases.map((p, i) => `
+    <button class="cinema__chapter" type="button" data-index="${i}" aria-label="Jump to Day ${p.day}: ${p.title}">
+      <span class="cinema__chapter-dot"></span>
+      <span class="cinema__chapter-label">${p.title.split(' ')[0]}</span>
+    </button>
+  `).join('');
+}
+
+function wireCinemaScroll() {
+  const cinema = $('#cinema');
+  if (!cinema) return;
+
+  const scenes = $$('.cinema__scene', cinema);
+  const phases = $$('.cinema__phase', cinema);
+  const chapters = $$('.cinema__chapter', cinema);
+  const progressBar = $('#cinemaProgressBar');
+  const dayEl = $('#cinemaDayValue');
+  const n = scenes.length;
+  if (!n) return;
+
+  let currentIdx = -1;
+  let rafPending = false;
+
+  const setActiveIdx = (idx) => {
+    if (idx === currentIdx) return;
+    currentIdx = idx;
+    scenes.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+    phases.forEach((p, i) => p.classList.toggle('is-active', i === idx));
+    chapters.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+  };
+
+  const update = () => {
+    rafPending = false;
+    const rect = cinema.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // Scrollable distance inside the pinned container.
+    // Progress 0 → when pin first sticks (top of cinema hits top of viewport)
+    // Progress 1 → when pin releases (bottom of cinema hits bottom of viewport)
+    const scrollable = rect.height - vh;
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / Math.max(1, scrollable)));
+
+    const phaseFloat = progress * (n - 1);
+    const idx = Math.round(phaseFloat);
+    setActiveIdx(idx);
+
+    // Smooth Day counter that interpolates between adjacent phases
+    const lower = Math.floor(phaseFloat);
+    const upper = Math.min(n - 1, lower + 1);
+    const t = phaseFloat - lower;
+    const interpDay = Math.round(cinemaPhases[lower].day + (cinemaPhases[upper].day - cinemaPhases[lower].day) * t);
+    if (dayEl) dayEl.textContent = String(interpDay).padStart(3, '0');
+
+    if (progressBar) progressBar.style.width = (progress * 100) + '%';
+  };
+
+  const onScroll = () => {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Clicking a chapter jumps the page to the corresponding scroll position
+  chapters.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      const rect = cinema.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const scrollable = rect.height - vh;
+      const targetProgress = i / (n - 1);
+      const currentTop = window.scrollY + rect.top;
+      const targetY = currentTop + targetProgress * scrollable;
+      window.scrollTo({ top: targetY, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+  });
+}
+
+/* Legacy fallback — static timeline for reduced-motion users.
+   Kept in the DOM (hidden by default) so users with prefers-reduced-motion
+   see readable content without the scroll choreography. */
 const journeySteps = [
-  { day: 1,   title: 'The seed',       desc: 'A single seed from last season\'s best pods is sown in raised nursery beds. 1,200+ contract farmers across AP, Karnataka, and Kashmir begin the cycle together.', icon: 'seed' },
-  { day: 28,  title: 'Transplanting',  desc: 'Four-week-old seedlings are transplanted into prepared fields. Drip irrigation keeps water use to half of flood-irrigated alternatives.', icon: 'sprout' },
-  { day: 55,  title: 'First flower',   desc: 'White flowers bloom, self-pollinating within 48 hours. Weather-monitoring stations track temperature, humidity, and rainfall to predict yield.', icon: 'flower' },
-  { day: 80,  title: 'Green fruit',    desc: 'Chillies emerge — bright green, tender, still building heat. Farmers walk the rows daily, removing damaged pods by hand.', icon: 'chilli-green' },
-  { day: 110, title: 'Red harvest',    desc: 'Pods turn crimson and are hand-picked at peak ripeness. Only ripe fruit is accepted — immature pods are rejected in the field.', icon: 'chilli-red' },
-  { day: 125, title: 'Sun drying',     desc: '14–21 days on raised bamboo platforms. Moisture drops from 78% to a stable 10%. No artificial dehydration, no colour enhancers.', icon: 'sun' },
-  { day: 135, title: 'Grading',        desc: 'Manual and machine sorting into Grade A/B/C by size, colour, and defect count. Stems removed for EU and US-bound shipments.', icon: 'grade' },
-  { day: 142, title: 'Lab testing',    desc: 'NABL-accredited lab tests every lot for aflatoxin, Sudan dye, moisture, ASTA colour, and Scoville. Reports accompany every container.', icon: 'lab' },
-  { day: 147, title: 'Port',           desc: 'FCL and LCL shipments leave Chennai, Mundra, or Nhava Sheva. FOB, CIF, and DDP incoterms available. From seed to sea in 147 days.', icon: 'ship' }
+  { day: 1,   title: 'Plowing',       desc: 'Red soil of Guntur, rich in iron and potassium, is turned over to breathe. Farmers read the land by touch — crumbling a fistful to judge moisture.' },
+  { day: 5,   title: 'Seeding',       desc: 'Certified seeds from last season\'s best pods are placed into shallow furrows. We pay farmers a 15% premium for using our seed stock.' },
+  { day: 14,  title: 'Germination',   desc: 'A tap-root pushes down, two cotyledons reach up. Germination rate is one of our tracked quality KPIs — a strong stand means a strong harvest.' },
+  { day: 28,  title: 'Transplanting', desc: 'Drip irrigation lines follow each row. We use half the water of flood irrigation, and the plants reward us with deeper root systems.' },
+  { day: 55,  title: 'Flowering',     desc: 'Small white flowers self-pollinate within 48 hours. We require pollinator strips at field edges to help native bees.' },
+  { day: 80,  title: 'Green fruit',   desc: 'Chillies emerge, bright and waxy green. We walk the rows weekly to remove damaged pods so plant energy goes into the survivors.' },
+  { day: 110, title: 'Red harvest',   desc: 'Hand-picked at peak ripeness — only a human eye can judge the precise shade that signals peak capsaicin and colour.' },
+  { day: 125, title: 'Sun drying',    desc: '14–21 days on bamboo platforms under the Andhra sun. Moisture drops from 78% to 10%. No artificial heat, no colour enhancers, no sulphur.' },
+  { day: 147, title: 'Port',          desc: 'Graded, stemmed, lab-tested, and packed. From our warehouses, containers travel to Chennai, Mundra, or Nhava Sheva — bound for 42 countries.' }
 ];
 
 const journeyIcons = {
-  seed:        `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="14" rx="5" ry="7"/><path d="M12 7V3M9 5l3-2 3 2"/></svg>`,
-  sprout:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8"/><path d="M12 12c-4 0-6-2-6-6 4 0 6 2 6 6z"/><path d="M12 12c4 0 6-2 6-6-4 0-6 2-6 6z"/><path d="M4 20h16"/></svg>`,
-  flower:      `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><path d="M12 9.5V5M12 14.5V19M9.5 12H5M14.5 12H19M10.2 10.2L7 7M13.8 13.8l3.2 3.2M13.8 10.2L17 7M10.2 13.8L7 17"/></svg>`,
-  'chilli-green': `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 13 Q 9 9 15 11 Q 20 12 21 15 Q 18 17 12 16 Q 7 15 4 13 Z" opacity=".9"/><path d="M4 13 Q 2.5 11 2 9.5 Q 1.8 8.5 3 8.8 Q 4 9.8 4 13 Z" opacity=".95"/></svg>`,
-  'chilli-red':   `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 13 Q 9 9 15 11 Q 20 12 21 15 Q 18 17 12 16 Q 7 15 4 13 Z"/><path d="M4 13 Q 2.5 11 2 9.5 Q 1.8 8.5 3 8.8 Q 4 9.8 4 13 Z"/></svg>`,
-  sun:         `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" fill="currentColor" opacity=".3"/><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>`,
-  grade:       `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="12" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>`,
-  lab:         `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6.5L4.5 17A2 2 0 0 0 6.2 20h11.6a2 2 0 0 0 1.7-3L15 9.5V3"/><path d="M8 3h8"/><path d="M7 14h10" stroke-dasharray="1 2"/></svg>`,
-  ship:        `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2 4h14l2-4"/><path d="M4 17l1-6h14l1 6"/><path d="M8 11V7h8v4"/><path d="M12 3v4"/></svg>`
+  seed: `<svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="14" rx="5" ry="7"/></svg>`
 };
 
 function renderJourney() {
@@ -793,7 +1675,6 @@ function renderJourney() {
   journeySteps.forEach((s, i) => {
     const el = document.createElement('div');
     el.className = 'timeline-step';
-    el.dataset.index = i;
     el.innerHTML = `
       <div class="timeline-step__content">
         <div class="timeline-step__day"><b>Day ${s.day}</b></div>
@@ -801,45 +1682,20 @@ function renderJourney() {
         <p class="timeline-step__body">${s.desc}</p>
       </div>
       <div class="timeline-step__dot" aria-hidden="true"></div>
-      <div class="timeline-step__visual" aria-hidden="true">
-        ${journeyIcons[s.icon] || journeyIcons.seed}
-      </div>
+      <div class="timeline-step__visual" aria-hidden="true">${journeyIcons.seed}</div>
     `;
     wrap.appendChild(el);
   });
 }
 
 function wireJourneyScroll() {
-  const progress = $('#timelineProgress');
-  const timeline = $('#timeline');
+  // Simple reveal-on-view for the reduced-motion fallback timeline
   const steps = $$('.timeline-step');
-  if (!timeline || !progress || !steps.length) return;
-
-  // Reveal each step as it enters view (staggered by the CSS transitions)
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, { threshold: 0.2, rootMargin: '0px 0px -15% 0px' });
+  if (!steps.length) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.2 });
   steps.forEach(s => io.observe(s));
-
-  // Fill the vertical progress rail based on scroll position through the timeline
-  const rail = $('.timeline__rail');
-  const updateProgress = () => {
-    if (!rail) return;
-    const railRect = rail.getBoundingClientRect();
-    const vh = window.innerHeight;
-    // Progress = how far through the rail the viewport midpoint has travelled
-    const viewportMid = vh * 0.5;
-    const travelled = viewportMid - railRect.top;
-    const pct = Math.max(0, Math.min(1, travelled / railRect.height));
-    progress.style.height = `${pct * 100}%`;
-  };
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
-  updateProgress();
 }
 
 /* ================================================================
@@ -912,8 +1768,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderVarieties();
   wireFilters();
-  renderJourney();
-  wireJourneyScroll();
+  renderCinema();
+  wireCinemaScroll();
+  renderJourney();       // reduced-motion fallback
+  wireJourneyScroll();   // reduced-motion fallback
   wireContactForm();
   wireNav();
 

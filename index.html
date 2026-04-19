@@ -90,6 +90,8 @@
     <a href="#/">Home</a>
     <a href="#varieties">Varieties</a>
     <a href="#journey">Journey</a>
+    <a href="#/about">About</a>
+    <a href="#/why-us">Why Us</a>
     <a href="#contact">Contact</a>
   </nav>
   <a href="#contact" class="nav__cta">Get Quote →</a>
@@ -147,18 +149,34 @@
     <div class="types-grid" id="typesGrid"></div>
   </section>
 
-  <!-- JOURNEY TIMELINE -->
+  <!-- JOURNEY CINEMA — scroll-driven 9-scene animation -->
   <section class="journey" id="journey" aria-labelledby="journey-title">
     <div class="section-head">
       <div class="kicker">02 — 147 Days</div>
-      <h2 id="journey-title">Soil <em>to port.</em></h2>
-      <p>From a single seed on Day 1 to sealed containers leaving Indian ports on Day 147 — here's how every chilli we ship is born, raised, and readied for the world.</p>
+      <h2 id="journey-title">From seed <em>to ship.</em></h2>
+      <p>Scroll down to watch a single chilli's journey unfold — from the first furrow broken on Day 1 to the container sealed on Day 147.</p>
     </div>
 
-    <div class="timeline" id="timeline">
-      <div class="timeline__rail">
-        <div class="timeline__progress" id="timelineProgress"></div>
+    <div class="cinema" id="cinema" aria-label="Animated journey from seed to ship">
+      <div class="cinema__pin">
+        <div class="cinema__stage" id="cinemaStage" aria-hidden="true"></div>
+        <div class="cinema__narrative">
+          <div class="cinema__day" id="cinemaDay">
+            <span class="cinema__day-label">Day</span>
+            <span class="cinema__day-value" id="cinemaDayValue">001</span>
+          </div>
+          <div class="cinema__phases" id="cinemaPhases" aria-live="polite"></div>
+          <div class="cinema__progress">
+            <div class="cinema__progress-bar" id="cinemaProgressBar"></div>
+          </div>
+          <div class="cinema__chapters" id="cinemaChapters" aria-hidden="true"></div>
+        </div>
       </div>
+    </div>
+
+    <!-- Static fallback for reduced-motion users -->
+    <div class="timeline" id="timeline" aria-hidden="true">
+      <div class="timeline__rail"><div class="timeline__progress" id="timelineProgress"></div></div>
       <div class="timeline__steps" id="timelineSteps"></div>
     </div>
   </section>
@@ -281,6 +299,8 @@
       <a href="#/">Home</a>
       <a href="#varieties">Varieties</a>
       <a href="#journey">Journey</a>
+      <a href="#/about">About us</a>
+      <a href="#/why-us">Why us</a>
       <a href="#contact">Contact</a>
     </div>
 
