@@ -16,4 +16,4 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-Sitemap: https://vijayaenterprises.international/sitemap.xml
+Sitemap: https://vijayaenterprises.com/sitemap.xml
