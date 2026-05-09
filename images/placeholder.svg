@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ece0cd"/>
+      <stop offset="100%" stop-color="#e2d3ba"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e85c2c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#e85c2c" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1a0f0a" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#dots)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <g transform="translate(400 270)">
+    <path d="M -90 -10 Q -60 -50 -10 -40 Q 50 -28 80 10 Q 60 50 0 60 Q -70 50 -90 -10 Z"
+          fill="#c7261c" opacity="0.85"/>
+    <path d="M -10 -40 Q -4 -52 4 -56 Q 12 -50 14 -42 Q 6 -40 -2 -38 Z"
+          fill="#3b5a2a"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle"
+        font-family="Georgia, serif" font-style="italic" font-size="28"
+        fill="#1a0f0a" opacity="0.55">
+    Vijaya Enterprises
+  </text>
+  <text x="400" y="462" text-anchor="middle"
+        font-family="system-ui, sans-serif" font-size="13" letter-spacing="3"
+        fill="#8a7563" opacity="0.7">
+    REPLACE THIS IMAGE — see IMAGES.md
+  </text>
+</svg>

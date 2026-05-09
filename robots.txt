@@ -1,19 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /*.json$
+Disallow: /images/placeholder.svg
 
-# Crawl-delay courtesy for aggressive bots
-Crawl-delay: 1
-
-# Major search engines — no delay
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-Sitemap: https://vijayaenterprises.com/sitemap.xml
+Sitemap: https://vijayaenterprises.international/sitemap.xml
