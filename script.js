@@ -132,7 +132,7 @@ function handleQuote(e) {
     status.textContent = `✓ Thank you, ${company}. Enquiry logged for ${volume} MT of ${variety}. Our export desk will reply at ${email} within 24 working hours.`;
   }
   // Optional: also open WhatsApp pre-filled
-  const phone = "918798793211";
+  const phone = "918978793211";
   const message = encodeURIComponent(
     `Hello Vijaya Enterprises, I'm ${company} from ${data.get("country") || "—"}. I'd like to enquire about ${volume} MT of ${variety}. Please reach me at ${email}.`
   );
