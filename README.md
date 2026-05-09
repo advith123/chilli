@@ -91,7 +91,7 @@ After deployment, also do these one-time setup tasks:
 
 ## Quote form
 
-The form on **Home** and **Contact** pages doesn't post to a backend (you said HTML/CSS/JS only). When the buyer clicks Submit, the form **opens WhatsApp with the enquiry pre-filled** at +91 87987 93211. The buyer hits send in WhatsApp; you receive the enquiry directly with all their details.
+The form on **Home** and **Contact** pages doesn't post to a backend (you said HTML/CSS/JS only). When the buyer clicks Submit, the form **opens WhatsApp with the enquiry pre-filled** at +91 8978793211. The buyer hits send in WhatsApp; you receive the enquiry directly with all their details.
 
 If you ever want server-side form handling without code, the easiest paths are:
 - **Formspree** — paste your endpoint into the form's `action` attribute, no code change needed.
