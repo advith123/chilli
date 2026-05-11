@@ -1,5 +1,160 @@
+# ============================================================
+# Vijaya Enterprises Pvt. Ltd.
+# robots.txt — explicit allow/deny for search and AI crawlers
+# Last updated: 2026-05-11
+# ============================================================
+
+# -------- DEFAULT (catch-all) --------
 User-agent: *
 Allow: /
 Disallow: /images/placeholder.svg
+Disallow: /private/
+Disallow: /*.zip$
+Disallow: /*.tar.gz$
+Disallow: /*?*utm_           # don't index UTM-parameterized duplicates
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
 
+# -------- TRADITIONAL SEARCH ENGINES (welcome) --------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+# -------- AI / GENERATIVE ENGINES --------
+# We WANT to be cited in answer engines. Allow these explicitly.
+# Flip Allow -> Disallow on any line below to opt out of that engine.
+
+# OpenAI — ChatGPT training & live retrieval
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude training & live retrieval
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Gemini / Bard / AI Overviews
+# (Google-Extended is SEPARATE from Googlebot — controls Gemini training only)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta (Llama training, AI features in WhatsApp/Instagram/FB)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Bytedance / TikTok / Doubao
+User-agent: Bytespider
+Allow: /
+
+# DeepSeek
+User-agent: DeepSeekBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot (data extraction; allow so b2b directories ingest us correctly)
+User-agent: Diffbot
+Allow: /
+
+# Common Crawl (powers many LLMs upstream)
+User-agent: CCBot
+Allow: /
+
+# -------- LOW-VALUE / AGGRESSIVE CRAWLERS (blocked) --------
+# These hit hard and rarely deliver buyer traffic. Block by default.
+# Unblock only if you actively use the respective SEO tool.
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# -------- SITEMAP --------
 Sitemap: https://vijayaenterprises.international/sitemap.xml

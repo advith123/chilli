@@ -1,58 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ============ HOME ============ -->
   <url>
     <loc>https://vijayaenterprises.international/</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/hero-bg.jpeg</image:loc>
+      <image:title>Vijaya Enterprises — Indian Dry Red Chilli Yards in Warangal</image:title>
+      <image:caption>Sun-drying yards of Vijaya Enterprises, Warangal — Guntur, Teja, Byadgi, Kashmiri varieties.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/logo.webp</image:loc>
+      <image:title>Vijaya Enterprises Pvt. Ltd. — Logo</image:title>
+    </image:image>
   </url>
+
+  <!-- ============ ABOUT ============ -->
   <url>
     <loc>https://vijayaenterprises.international/about.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/about.html" />
   </url>
+
+  <!-- ============ VARIETIES (top SEO target) ============ -->
   <url>
     <loc>https://vijayaenterprises.international/varieties.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/varieties.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/varieties.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/varieties/guntur-s4.jpeg</image:loc>
+      <image:title>Guntur Sannam S4 Dry Red Chilli</image:title>
+      <image:caption>Guntur Sannam S4 — heat-driven Indian dry red chilli, ASTA 32-38, SHU 35,000-40,000.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/varieties/S17-Teja.jpg</image:loc>
+      <image:title>Teja S17 Dry Red Chilli</image:title>
+      <image:caption>Teja S17 — Warangal-grown high-pungency dry red chilli, SHU 75,000-90,000.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/varieties/341-indo.jpeg</image:loc>
+      <image:title>341 Indo-5 Dry Red Chilli</image:title>
+      <image:caption>341 Indo-5 hybrid — balanced heat and color, export-grade.</image:caption>
+    </image:image>
   </url>
+
+  <!-- ============ PROCESS ============ -->
   <url>
     <loc>https://vijayaenterprises.international/process.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/process.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/process.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/lifecycle/1.jpeg</image:loc>
+      <image:title>Step 1: Plowing the chilli field</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/lifecycle/12.jpeg</image:loc>
+      <image:title>Step 12: Sun drying export-grade chillies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/lifecycle/14.jpeg</image:loc>
+      <image:title>Step 14: Packing export-grade dry red chillies</image:title>
+    </image:image>
   </url>
+
+  <!-- ============ TEAM ============ -->
   <url>
     <loc>https://vijayaenterprises.international/team.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/team.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/team.html" />
   </url>
+
+  <!-- ============ GALLERY ============ -->
   <url>
     <loc>https://vijayaenterprises.international/gallery.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/gallery.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/gallery.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/gallery/1.jpeg</image:loc>
+      <image:title>Vijaya Enterprises chilli yard — sorting line</image:title>
+    </image:image>
   </url>
+
+  <!-- ============ BLOG INDEX ============ -->
   <url>
     <loc>https://vijayaenterprises.international/blog.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/blog.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/blog.html" />
   </url>
+
+  <!-- ============ CONTACT ============ -->
   <url>
     <loc>https://vijayaenterprises.international/contact.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/contact.html" />
   </url>
+
+  <!-- ============ BLOG ARTICLES ============ -->
   <url>
     <loc>https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/blog/Blog-1.png</image:loc>
+      <image:title>Best red chilli varieties in India for export</image:title>
+      <image:caption>Comparison guide to Guntur, Teja, Byadgi, Kashmiri, 334, and 341 export varieties.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://vijayaenterprises.international/blog/guntur-vs-byadgi-chillies.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/blog/guntur-vs-byadgi-chillies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/blog/guntur-vs-byadgi-chillies.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/blog/blog-2.png</image:loc>
+      <image:title>Guntur vs Byadgi chillies — buyer's comparison</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://vijayaenterprises.international/blog/how-indian-chillies-processed-export.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vijayaenterprises.international/blog/how-indian-chillies-processed-export.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vijayaenterprises.international/blog/how-indian-chillies-processed-export.html" />
+    <image:image>
+      <image:loc>https://vijayaenterprises.international/images/blog/blog-3.jpeg</image:loc>
+      <image:title>How Indian chillies are processed for export</image:title>
+      <image:caption>15-step lifecycle from field to export-ready container.</image:caption>
+    </image:image>
   </url>
+
 </urlset>

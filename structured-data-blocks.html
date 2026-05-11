@@ -1,0 +1,566 @@
+<!--
+============================================================
+Vijaya Enterprises — Structured Data Snippets
+============================================================
+Copy each block into the <head> of the corresponding page.
+Replace placeholders in [SQUARE BRACKETS] with real values.
+Validate with: https://search.google.com/test/rich-results
+============================================================
+-->
+
+
+<!-- ============================================================ -->
+<!-- 1. BreadcrumbList — ADD TO EVERY PAGE (adjust per page)       -->
+<!-- ============================================================ -->
+
+<!-- index.html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vijayaenterprises.international/"}
+  ]
+}
+</script>
+
+<!-- varieties.html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vijayaenterprises.international/"},
+    {"@type": "ListItem", "position": 2, "name": "Varieties", "item": "https://vijayaenterprises.international/varieties.html"}
+  ]
+}
+</script>
+
+<!-- blog/best-red-chilli-varieties-india-export.html -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vijayaenterprises.international/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://vijayaenterprises.international/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "Best Red Chilli Varieties for Export", "item": "https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html"}
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 2. WebSite + SearchAction — ADD TO index.html ONLY            -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://vijayaenterprises.international/#website",
+  "url": "https://vijayaenterprises.international/",
+  "name": "Vijaya Enterprises",
+  "description": "Premium Indian dry red chilli exporters from Warangal, Telangana.",
+  "publisher": {"@id": "https://vijayaenterprises.international/#org"},
+  "inLanguage": "en",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://vijayaenterprises.international/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 3. Organization (expanded) — REPLACE on index.html            -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://vijayaenterprises.international/#org",
+  "name": "Vijaya Enterprises Pvt. Ltd.",
+  "alternateName": "Vijaya Enterprises",
+  "url": "https://vijayaenterprises.international/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://vijayaenterprises.international/images/logo.webp",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://vijayaenterprises.international/images/og-cover.jpg",
+  "foundingDate": "2026",
+  "founder": {
+    "@type": "Person",
+    "name": "Dinesh Rao Balguri",
+    "jobTitle": "Founder & Managing Director",
+    "url": "https://vijayaenterprises.international/authors/dinesh-rao-balguri.html"
+  },
+  "description": "Indian exporter of premium dry red chilli varieties including Guntur Sannam S4, Teja S17, Byadgi Kaddi, Kashmiri Deghi Mirch, 334 Wonder Hot and 341 Indo-5, sourced directly from Telangana and Andhra Pradesh.",
+  "knowsAbout": ["Dry red chilli export", "Guntur Sannam S4", "Teja S17", "Byadgi chilli", "Kashmiri Deghi Mirch", "Spice trade", "FOB exports India", "Container shipping spices"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Add street address]",
+    "addressLocality": "Warangal",
+    "addressRegion": "Telangana",
+    "postalCode": "506001",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+91-87987-93211",
+    "contactType": "sales",
+    "areaServed": ["AE", "SA", "BD", "LK", "VN", "MY", "ID", "US", "GB", "DE", "ES"],
+    "availableLanguage": ["English", "Hindi", "Telugu"]
+  }],
+  "sameAs": [
+    "[LinkedIn company URL]",
+    "[IndiaMART seller URL]",
+    "[ZaubaCorp listing URL]",
+    "[APEDA exporter directory URL]",
+    "[Google Business Profile URL]"
+  ],
+  "areaServed": [
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Saudi Arabia"},
+    {"@type": "Country", "name": "Bangladesh"},
+    {"@type": "Country", "name": "Sri Lanka"},
+    {"@type": "Country", "name": "Vietnam"},
+    {"@type": "Country", "name": "Malaysia"},
+    {"@type": "Country", "name": "Indonesia"},
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "United Kingdom"},
+    {"@type": "Country", "name": "Germany"},
+    {"@type": "Country", "name": "Spain"}
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 4. Service — ADD TO index.html                                -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Bulk Dry Red Chilli Export",
+  "name": "Indian Dry Red Chilli Export Services",
+  "provider": {"@id": "https://vijayaenterprises.international/#org"},
+  "areaServed": [
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Saudi Arabia"},
+    {"@type": "Country", "name": "Bangladesh"},
+    {"@type": "Country", "name": "Sri Lanka"},
+    {"@type": "Country", "name": "Vietnam"},
+    {"@type": "Country", "name": "Malaysia"},
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "United Kingdom"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dry Red Chilli Varieties",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Guntur Sannam S4"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Teja S17"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Byadgi Kaddi"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Kashmiri Deghi Mirch"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "334 Wonder Hot"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "341 Indo-5"}}
+    ]
+  }
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 5. FAQPage — ADD TO index.html (mirror to HTML below)         -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What dry red chilli varieties does Vijaya Enterprises export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vijaya Enterprises exports six premium Indian dry red chilli varieties: Guntur Sannam S4 (ASTA 32-38, SHU 35,000-40,000), Teja S17 (SHU 75,000-90,000), Byadgi Kaddi (deep-red, oleoresin-grade), Kashmiri Deghi Mirch (color-only, sub-2,000 SHU), 334 Wonder Hot, and 341 Indo-5. All varieties are available in whole, stem-on, and stem-cut formats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your minimum order quantity (MOQ)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vijaya Enterprises supports both LCL (Less than Container Load) and FCL (Full Container Load) shipments. Typical MOQ for LCL is 1 metric ton; for FCL it is one 20-foot container (approximately 18 MT) or one 40-foot container (approximately 26 MT). Mixed-variety loads are accommodated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you ship FOB or CIF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Vijaya Enterprises quotes FOB Chennai or FOB Visakhapatnam by default, but can arrange CIF, CFR, or DAP terms on request. Quote turnaround is within 24 hours of receiving full enquiry details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which ports does Vijaya Enterprises export from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Primary export ports are Chennai (Tamil Nadu) and Visakhapatnam (Andhra Pradesh). Both are well-connected to Middle East, SE Asia, and EU shipping lanes with regular weekly sailings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you FSSAI, APEDA, and Spices Board registered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vijaya Enterprises holds FSSAI food safety registration, an IEC (Import Export Code) from DGFT, and is APEDA-registered. Spices Board RCMC and ISO 22000 / HACCP certifications are in progress as of 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is your quote turnaround?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vijaya Enterprises commits to a quote turnaround within 24 hours of receiving variety, quantity, destination port, and INCOTERMS preference. Samples ship within 3-5 working days against shipping cost recovery."
+      }
+    }
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 6. FAQPage — ADD TO varieties.html                            -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the SHU (heat) of Guntur Sannam S4?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Guntur Sannam S4 measures 35,000 to 40,000 SHU (Scoville Heat Units), placing it in the medium-high heat band. Its capsaicin content averages 0.226%, with ASTA color value of 32-38, making it the most commercially traded heat-driven Indian dry red chilli variety."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Teja S17 and Guntur Sannam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teja S17 is roughly twice as pungent as Guntur Sannam (75,000-90,000 SHU vs 35,000-40,000 SHU) and is favored for capsaicin/oleoresin extraction. Guntur Sannam offers stronger color (ASTA 32-38 vs Teja's 18-25) and is preferred for culinary blends. Teja is grown predominantly in the Warangal-Khammam belt; Guntur Sannam in the Guntur district."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Byadgi chilli low-pungent? What is its ASTA color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Byadgi Kaddi is a low-heat variety (~10,000-15,000 SHU) prized for its deep red color, with ASTA values typically 60-85. It is the preferred raw material for oleoresin extraction and natural food coloring, and is widely used in South Indian sambar masalas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Indian red chilli variety has the highest color value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kashmiri Deghi Mirch has the highest ASTA color value among Indian dry red chillies, typically 90-110, with very low heat (under 2,000 SHU). It is used purely as a natural colorant in dishes, sauces, and processed foods where deep red color is needed without pungency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the typical moisture content of export-grade Indian dry chillies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Export-grade Indian dry red chillies are dried to a moisture content of 10-11% maximum. Below 10% the chillies become brittle and lose color in transit; above 12% they risk mold growth during ocean transit. Vijaya Enterprises tests every lot before packing."
+      }
+    }
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 7. Product (upgraded) — REPLACE the ItemList on varieties.html-->
+<!-- One Product block per variety. Example below for Guntur S4.   -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://vijayaenterprises.international/varieties.html#guntur-sannam-s4",
+  "name": "Guntur Sannam S4 Dry Red Chilli",
+  "alternateName": "Guntur Sannam 334",
+  "description": "Premium Guntur Sannam S4 dry red chilli — the most commercially traded heat-driven Indian variety. Direct from Guntur farm-belt, sun-dried, hand-graded, export-ready.",
+  "image": "https://vijayaenterprises.international/images/varieties/guntur-s4.jpeg",
+  "brand": {"@type": "Brand", "name": "Vijaya Enterprises"},
+  "manufacturer": {"@id": "https://vijayaenterprises.international/#org"},
+  "category": "Dry Red Chilli / Spice",
+  "countryOfOrigin": {"@type": "Country", "name": "India"},
+  "additionalProperty": [
+    {"@type": "PropertyValue", "name": "Scoville Heat Units (SHU)", "value": "35000-40000"},
+    {"@type": "PropertyValue", "name": "ASTA Color Value", "value": "32-38"},
+    {"@type": "PropertyValue", "name": "Capsaicin Content", "value": "0.226%"},
+    {"@type": "PropertyValue", "name": "Moisture (max)", "value": "11%"},
+    {"@type": "PropertyValue", "name": "Length", "value": "5-7 cm"},
+    {"@type": "PropertyValue", "name": "Format", "value": "Whole / Stem-on / Stem-cut"},
+    {"@type": "PropertyValue", "name": "Origin District", "value": "Guntur, Andhra Pradesh"},
+    {"@type": "PropertyValue", "name": "Harvest Months", "value": "December-March"}
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "offerCount": "1",
+    "availability": "https://schema.org/InStock",
+    "businessFunction": "https://purl.org/goodrelations/v1#Sell",
+    "seller": {"@id": "https://vijayaenterprises.international/#org"},
+    "eligibleQuantity": {"@type": "QuantitativeValue", "minValue": 1, "unitText": "MT"},
+    "deliveryLeadTime": {"@type": "QuantitativeValue", "minValue": 7, "maxValue": 21, "unitCode": "DAY"}
+  }
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 8. HowTo (upgraded) — REPLACE on process.html                 -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How Indian Dry Red Chillies Are Grown, Dried and Exported",
+  "description": "The complete 15-step lifecycle of a dry red chilli from soil preparation to export-ready storage at Vijaya Enterprises.",
+  "image": "https://vijayaenterprises.international/images/og-cover.jpg",
+  "totalTime": "P150D",
+  "estimatedCost": {"@type": "MonetaryAmount", "currency": "INR", "value": "Trade-confidential"},
+  "supply": [
+    {"@type": "HowToSupply", "name": "Chilli seeds (Guntur Sannam / Teja / Byadgi / Kashmiri / 334 / 341)"},
+    {"@type": "HowToSupply", "name": "Organic + NPK fertilizer"},
+    {"@type": "HowToSupply", "name": "Drip irrigation water"}
+  ],
+  "tool": [
+    {"@type": "HowToTool", "name": "Tractor & plough"},
+    {"@type": "HowToTool", "name": "Sun-drying yard"},
+    {"@type": "HowToTool", "name": "Color sorter"},
+    {"@type": "HowToTool", "name": "HDPE woven bags (25kg / 50kg)"}
+  ],
+  "step": [
+    {"@type": "HowToStep", "name": "Plowing the soil", "text": "Loosen and turn the soil to prepare a fertile bed.", "image": "https://vijayaenterprises.international/images/lifecycle/1.jpeg", "timeRequired": "P3D"},
+    {"@type": "HowToStep", "name": "Sowing the seed", "text": "Place seeds in the soil and cover gently.", "image": "https://vijayaenterprises.international/images/lifecycle/2.jpeg", "timeRequired": "P2D"},
+    {"@type": "HowToStep", "name": "Germination", "text": "The seed sprouts and pushes through the soil.", "image": "https://vijayaenterprises.international/images/lifecycle/3.jpeg", "timeRequired": "P7D"},
+    {"@type": "HowToStep", "name": "Young plant", "text": "The seedling grows and develops more leaves.", "image": "https://vijayaenterprises.international/images/lifecycle/4.jpeg", "timeRequired": "P14D"},
+    {"@type": "HowToStep", "name": "Growing plant", "text": "The plant grows bigger and becomes bushy.", "image": "https://vijayaenterprises.international/images/lifecycle/5.jpeg", "timeRequired": "P21D"},
+    {"@type": "HowToStep", "name": "Flowering", "text": "White flowers bloom on the plant.", "image": "https://vijayaenterprises.international/images/lifecycle/6.jpeg", "timeRequired": "P14D"},
+    {"@type": "HowToStep", "name": "Fruit set", "text": "Tiny green chilli nubs appear after flowering.", "image": "https://vijayaenterprises.international/images/lifecycle/7.jpeg", "timeRequired": "P10D"},
+    {"@type": "HowToStep", "name": "Green chilli", "text": "Chillies grow bigger and turn deep green.", "image": "https://vijayaenterprises.international/images/lifecycle/8.jpeg", "timeRequired": "P21D"},
+    {"@type": "HowToStep", "name": "Red ripening", "text": "Chillies ripen and turn bright red on the plant.", "image": "https://vijayaenterprises.international/images/lifecycle/9.jpeg", "timeRequired": "P14D"},
+    {"@type": "HowToStep", "name": "Plucking", "text": "Ripe red chillies are hand-plucked from the plant.", "image": "https://vijayaenterprises.international/images/lifecycle/10.jpeg", "timeRequired": "P7D"},
+    {"@type": "HowToStep", "name": "Gathering", "text": "Freshly plucked chillies are collected in baskets and transported to drying yards.", "image": "https://vijayaenterprises.international/images/lifecycle/11.jpeg", "timeRequired": "P1D"},
+    {"@type": "HowToStep", "name": "Sun drying", "text": "Chillies are spread under the sun for 8-12 days to reach 10-11% moisture.", "image": "https://vijayaenterprises.international/images/lifecycle/12.jpeg", "timeRequired": "P10D"},
+    {"@type": "HowToStep", "name": "Segregating", "text": "Dried chillies are sorted by size, colour and quality using color sorters and hand grading.", "image": "https://vijayaenterprises.international/images/lifecycle/13.jpeg", "timeRequired": "P3D"},
+    {"@type": "HowToStep", "name": "Packing", "text": "Sorted chillies are packed into 25kg or 50kg HDPE woven bags for export.", "image": "https://vijayaenterprises.international/images/lifecycle/14.jpeg", "timeRequired": "P2D"},
+    {"@type": "HowToStep", "name": "Storage and export", "text": "Packed chillies are stored in temperature-controlled warehouses and loaded into FCL/LCL containers for export from Chennai or Visakhapatnam.", "image": "https://vijayaenterprises.international/images/lifecycle/15.jpeg", "timeRequired": "P5D"}
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 9. BlogPosting (upgraded) — REPLACE Article on blog articles  -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html#article",
+  "headline": "Best Red Chilli Varieties in India for Export",
+  "alternativeHeadline": "The 6 Indian dry red chilli varieties every importer should know",
+  "description": "A buyer's guide to the six most commercially traded Indian dry red chilli varieties — Guntur Sannam S4, Teja S17, Byadgi Kaddi, Kashmiri Deghi Mirch, 334 Wonder Hot, and 341 Indo-5 — with SHU, ASTA, and use-case data.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://vijayaenterprises.international/images/blog/Blog-1.png",
+    "width": 1200,
+    "height": 630
+  },
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-05-11",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Rao Balguri",
+    "url": "https://vijayaenterprises.international/authors/dinesh-rao-balguri.html",
+    "jobTitle": "Founder & Managing Director",
+    "worksFor": {"@id": "https://vijayaenterprises.international/#org"}
+  },
+  "publisher": {"@id": "https://vijayaenterprises.international/#org"},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html"
+  },
+  "articleSection": "Variety Guide",
+  "wordCount": "1850",
+  "inLanguage": "en",
+  "keywords": "Indian dry red chilli, Guntur Sannam S4, Teja S17, Byadgi Kaddi, Kashmiri Deghi Mirch, chilli export"
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 10. ImageGallery — ADD TO gallery.html                        -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Vijaya Enterprises — Photo Gallery",
+  "description": "Photos of farm, drying yards, sorting lines, packaging, warehouse, and team at Vijaya Enterprises, Warangal.",
+  "publisher": {"@id": "https://vijayaenterprises.international/#org"},
+  "image": [
+    {
+      "@type": "ImageObject",
+      "contentUrl": "https://vijayaenterprises.international/images/gallery/1.jpeg",
+      "name": "Sorting line at Vijaya Enterprises yard",
+      "caption": "Hand grading export-grade Guntur Sannam S4 chillies."
+    }
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 11. LocalBusiness (full) — REPLACE on contact.html            -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Exporter"],
+  "@id": "https://vijayaenterprises.international/#business",
+  "name": "Vijaya Enterprises Pvt. Ltd.",
+  "image": "https://vijayaenterprises.international/images/og-cover.jpg",
+  "logo": "https://vijayaenterprises.international/images/logo.webp",
+  "url": "https://vijayaenterprises.international/",
+  "telephone": "+91-87987-93211",
+  "email": "dineshrao1461@gmail.com",
+  "priceRange": "$$",
+  "currenciesAccepted": "USD, EUR, AED, SAR, INR",
+  "paymentAccepted": "Letter of Credit, Telegraphic Transfer, Wire Transfer",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Add full street address]",
+    "addressLocality": "Warangal",
+    "addressRegion": "Telangana",
+    "postalCode": "506001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.9689,
+    "longitude": 79.5941
+  },
+  "hasMap": "https://www.google.com/maps?q=17.9689,79.5941",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }],
+  "areaServed": [
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Saudi Arabia"},
+    {"@type": "Country", "name": "Bangladesh"},
+    {"@type": "Country", "name": "Sri Lanka"},
+    {"@type": "Country", "name": "Vietnam"},
+    {"@type": "Country", "name": "Malaysia"},
+    {"@type": "Country", "name": "Indonesia"},
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "United Kingdom"}
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 12. Person (founder) — ADD on team.html AND on author page    -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://vijayaenterprises.international/authors/dinesh-rao-balguri.html#person",
+  "name": "Dinesh Rao Balguri",
+  "jobTitle": "Founder & Managing Director",
+  "worksFor": {"@id": "https://vijayaenterprises.international/#org"},
+  "url": "https://vijayaenterprises.international/authors/dinesh-rao-balguri.html",
+  "image": "https://vijayaenterprises.international/images/team/dinesh-rao-balguri.jpg",
+  "email": "dinesh@vijayaenterprises.international",
+  "telephone": "+91-87987-93211",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Warangal",
+    "addressRegion": "Telangana",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": ["Dry red chilli sourcing", "Indian spice export", "Container logistics", "Guntur chilli trade", "Teja S17", "Byadgi Kaddi", "Oleoresin extraction grades"],
+  "sameAs": [
+    "[LinkedIn profile URL]"
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 13. Blog (CollectionPage) — ADD on blog.html                  -->
+<!-- ============================================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://vijayaenterprises.international/blog.html#blog",
+  "name": "Vijaya Enterprises — Indian Chilli Export Insights",
+  "description": "Articles on Indian dry red chilli export — variety comparisons, processing standards, ASTA colour, sourcing regions, and what international buyers should look for.",
+  "publisher": {"@id": "https://vijayaenterprises.international/#org"},
+  "inLanguage": "en",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Best Red Chilli Varieties in India for Export",
+      "url": "https://vijayaenterprises.international/blog/best-red-chilli-varieties-india-export.html",
+      "datePublished": "2026-04-01"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Guntur vs Byadgi Chillies — Buyer's Comparison",
+      "url": "https://vijayaenterprises.international/blog/guntur-vs-byadgi-chillies.html",
+      "datePublished": "2026-04-15"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How Indian Chillies Are Processed for Export",
+      "url": "https://vijayaenterprises.international/blog/how-indian-chillies-processed-export.html",
+      "datePublished": "2026-04-29"
+    }
+  ]
+}
+</script>
